@@ -162,5 +162,17 @@ namespace KataBankOCR.Code
 
             return true;
         }
+
+        public string ConvertOcrAccountNumberToDigitAccountNumber(char[][,] ocrAccountNumber)
+        {
+            string result = "";
+
+            for (int i = 0; i < ocrAccountNumber.Length; i++)
+            {
+                result += ConvertOCRtoDigit(ocrAccountNumber[i]);
+            }
+
+            return result;
+        }
     }
 }

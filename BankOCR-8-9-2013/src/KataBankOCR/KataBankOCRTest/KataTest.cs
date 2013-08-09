@@ -13,12 +13,14 @@ namespace KataBankOCR.UnitTest
     class KataTest
     {
         public KataCode _kataCode;
+        
         private char[,] _OCR1 = new char[3, 3]
             {
                 {' ',' ',' '},
                 {' ',' ','|'},
                 {' ',' ','|'}   
             };
+
         private char[,] _OCR2 = new char[3, 3]
             {
                 {' ','_',' '},
@@ -74,10 +76,17 @@ namespace KataBankOCR.UnitTest
                 {'|','_','|'}
             };
 
+        private char[][,] _ocrAccountNumberAllZeros = new char[9][,];
+
         [SetUp]
         public void SetupUnitTests()
         {
             _kataCode = new KataCode();
+            
+            for (int i = 0; i < 9; i++)
+            {
+                _ocrAccountNumberAllZeros[i] = _OCR0;
+            }
         }
 
         [Test]
@@ -158,6 +167,16 @@ namespace KataBankOCR.UnitTest
             var actualResult = _kataCode.ConvertOCRtoDigit(_OCR0);
             var expectedResult = '0';
             Assert.AreEqual(actualResult, expectedResult);
+        }
+
+        [Test]
+        public void RecognizeOcrAccountNumberWithAllZeros()
+        {
+            var actualResult = _kataCode.ConvertOcrAccountNumberToDigitAccountNumber(_ocrAccountNumberAllZeros);
+            var expectedResult = "000000000";
+            Assert.AreEqual(actualResult, expectedResult);
+            
+
         }
     }
 }
