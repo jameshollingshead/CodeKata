@@ -12,17 +12,32 @@ namespace KataBankOCR.Code
         {
             if (IsOcr1(ocrInput) == true)
                 return '1';
-            if (isOcr2(ocrInput) == true)
+            if (IsOcr2(ocrInput) == true)
                 return '2';
-            if (isOcr3(ocrInput) == true)
+            if (IsOcr3(ocrInput) == true)
                 return '3';
-            if (isOcr4(ocrInput) == true)
+            if (IsOcr4(ocrInput) == true)
                 return '4';
+            if (IsOcr5(ocrInput) == true)
+                return '5';
 
             else return ' ';
         }
 
-        private bool isOcr4(char[,] ocrInput)
+        private bool IsOcr5(char[,] ocrInput)
+        {
+            bool result;
+            char[,] ocr5 = new char[3, 3]
+            {
+                {' ','_',' '},
+                {'|','_',' '},
+                {' ','_','|'}
+            };
+            result = AreOcrDigitsEqual(ocrInput, ocr5);
+            return result;
+        }
+
+        private bool IsOcr4(char[,] ocrInput)
         {
             bool result;
             char[,] ocr4 = new char[3, 3]
@@ -35,7 +50,7 @@ namespace KataBankOCR.Code
             return result;
         }
 
-        private bool isOcr3(char[,] ocrInput)
+        private bool IsOcr3(char[,] ocrInput)
         {
             bool result;
             char[,] ocr3 = new char[3, 3]
@@ -48,7 +63,7 @@ namespace KataBankOCR.Code
             return result;
         }
 
-        private bool isOcr2(char[,] ocrInput)
+        private bool IsOcr2(char[,] ocrInput)
         {
             bool result;
             char[,] ocr2 = new char[3, 3]
