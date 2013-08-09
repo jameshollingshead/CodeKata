@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataBankOCRCode", "KataBankOCRCode\KataBankOCRCode.csproj", "{80DE2E13-9F15-4105-8EAB-1A2C965C412B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataBankOCRTest", "KataBankOCRTest\KataBankOCRTest.csproj", "{A00E099E-429E-4A49-AFFD-9B8D4663B6BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80DE2E13-9F15-4105-8EAB-1A2C965C412B}.Debug|x86.ActiveCfg = Debug|x86
+		{80DE2E13-9F15-4105-8EAB-1A2C965C412B}.Debug|x86.Build.0 = Debug|x86
+		{80DE2E13-9F15-4105-8EAB-1A2C965C412B}.Release|x86.ActiveCfg = Release|x86
+		{80DE2E13-9F15-4105-8EAB-1A2C965C412B}.Release|x86.Build.0 = Release|x86
+		{A00E099E-429E-4A49-AFFD-9B8D4663B6BF}.Debug|x86.ActiveCfg = Debug|x86
+		{A00E099E-429E-4A49-AFFD-9B8D4663B6BF}.Debug|x86.Build.0 = Debug|x86
+		{A00E099E-429E-4A49-AFFD-9B8D4663B6BF}.Release|x86.ActiveCfg = Release|x86
+		{A00E099E-429E-4A49-AFFD-9B8D4663B6BF}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
