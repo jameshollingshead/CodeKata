@@ -55,6 +55,12 @@ namespace KataBankOCR.UnitTest
                 {' ',' ','|'},
                 {' ',' ','|'}
             };
+        private char[,] _OCR8 = new char[3, 3]
+            {
+                {' ','_',' '},
+                {'|','_','|'},
+                {'|','_','|'}
+            };
 
         [SetUp]
         public void SetupUnitTests()
@@ -115,6 +121,14 @@ namespace KataBankOCR.UnitTest
         {
             var actualResult = _kataCode.ConvertOCRtoDigit(_OCR7);
             var expectedResult = '7';
+            Assert.AreEqual(actualResult, expectedResult);
+        }
+
+        [Test]
+        public void OcrNumberIs8()
+        {
+            var actualResult = _kataCode.ConvertOCRtoDigit(_OCR8);
+            var expectedResult = '8';
             Assert.AreEqual(actualResult, expectedResult);
         }
     }
