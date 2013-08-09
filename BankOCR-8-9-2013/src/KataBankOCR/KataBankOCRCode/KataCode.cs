@@ -12,10 +12,26 @@ namespace KataBankOCR.Code
         {
             if (IsOcr1(ocrInput) == true)
                 return '1';
-            else return '2';
+            if (isOcr2(ocrInput) == true)
+                return '2';
+
+            else return ' ';
         }
 
-        private bool IsOcr1(char[,] OcrDigitToCheck)
+        private bool isOcr2(char[,] ocrInput)
+        {
+            bool result;
+            char[,] ocr2 = new char[3, 3]
+            {
+                {' ','_',' '},
+                {' ','_','|'},
+                {'|','_',' '}
+            };
+            result = AreOcrDigitsEqual(ocrInput, ocr2);
+            return result;
+        }
+
+        private bool IsOcr1(char[,] ocrInput)
         {
             bool result;
             char[,] ocr1 = new char[3,3]
@@ -24,7 +40,7 @@ namespace KataBankOCR.Code
                 {' ',' ','|'},
                 {' ',' ','|'}   
             };
-            result = AreOcrDigitsEqual(OcrDigitToCheck, ocr1);
+            result = AreOcrDigitsEqual(ocrInput, ocr1);
             return result;
         }
 
