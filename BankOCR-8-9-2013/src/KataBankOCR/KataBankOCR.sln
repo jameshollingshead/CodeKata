@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataBankOCRCode", "KataBankOCRCode\KataBankOCRCode.csproj", "{80DE2E13-9F15-4105-8EAB-1A2C965C412B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataBankOCR.Code", "KataBankOCRCode\KataBankOCR.Code.csproj", "{80DE2E13-9F15-4105-8EAB-1A2C965C412B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataBankOCRTest", "KataBankOCRTest\KataBankOCRTest.csproj", "{A00E099E-429E-4A49-AFFD-9B8D4663B6BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataBankOCR.UnitTests", "KataBankOCRTest\KataBankOCR.UnitTests.csproj", "{A00E099E-429E-4A49-AFFD-9B8D4663B6BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

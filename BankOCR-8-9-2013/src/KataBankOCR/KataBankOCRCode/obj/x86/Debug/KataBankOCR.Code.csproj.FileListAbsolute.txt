@@ -1,0 +1,5 @@
+C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRCode\bin\Debug\KataBankOCRCode.pdb
+C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRCode\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRCode\obj\x86\Debug\KataBankOCRCode.pdb
+C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRCode\bin\Debug\KataBankOCRCode.dll
+C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRCode\obj\x86\Debug\KataBankOCRCode.dll
