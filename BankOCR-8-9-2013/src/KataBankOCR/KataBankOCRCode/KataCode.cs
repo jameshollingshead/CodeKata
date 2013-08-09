@@ -29,7 +29,7 @@ namespace KataBankOCR.Code
             if (IsOcr9(ocrInput) == true)
                 return '9';
 
-            return ' ';
+            return '0';
         }
 
         private bool IsOcr9(char[,] ocrInput)
