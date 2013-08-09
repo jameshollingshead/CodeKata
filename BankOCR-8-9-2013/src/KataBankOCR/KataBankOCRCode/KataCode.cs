@@ -10,26 +10,31 @@ namespace KataBankOCR.Code
 
         public char ConvertOCRtoDigit(char[,] ocrInput)
         {
-            if (IsOCR1(ocrInput) == true)
+            if (IsOcr1(ocrInput) == true)
                 return '1';
             else return '2';
         }
 
-        private bool IsOCR1(char[,] OcrDigitToCheck)
+        private bool IsOcr1(char[,] OcrDigitToCheck)
         {
-            
+            bool result;
             char[,] ocr1 = new char[3,3]
             {
                 {' ',' ',' '},
                 {' ',' ','|'},
                 {' ',' ','|'}   
             };
+            result = AreOcrDigitsEqual(OcrDigitToCheck, ocr1);
+            return result;
+        }
 
+        private static bool AreOcrDigitsEqual(char[,] ocrInput, char[,] ocrToTestAgainst)
+        {
             for (int x = 0; x < 3; x++)
             {
                 for (int y = 0; y < 3; y++)
                 {
-                    if(OcrDigitToCheck[x,y] != ocr1[x,y])
+                    if (ocrInput[x, y] != ocrToTestAgainst[x, y])
                         return false;
                 }
             }

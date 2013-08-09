@@ -33,7 +33,7 @@ namespace KataBankOCR.UnitTest
         }
 
         [Test]
-        public void OCRNumberIs1()
+        public void OcrNumberIs1()
         {
             var actualResult = _kataCode.ConvertOCRtoDigit(_OCR1);
             var expectedResult = '1';
@@ -41,7 +41,7 @@ namespace KataBankOCR.UnitTest
         }
 
         [Test]
-        public void OCRNumberIs2()
+        public void OcrNumberIs2()
         {
             var actualResult = _kataCode.ConvertOCRtoDigit(_OCR2);
             var expectedResult = '2';
