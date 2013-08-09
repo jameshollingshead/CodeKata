@@ -14,8 +14,23 @@ namespace KataBankOCR.Code
                 return '1';
             if (isOcr2(ocrInput) == true)
                 return '2';
+            if (isOcr3(ocrInput) == true)
+                return '3';
 
             else return ' ';
+        }
+
+        private bool isOcr3(char[,] ocrInput)
+        {
+            bool result;
+            char[,] ocr3 = new char[3, 3]
+            {
+                {' ','_',' '},
+                {' ','_','|'},
+                {' ','_','|'}
+            };
+            result = AreOcrDigitsEqual(ocrInput, ocr3);
+            return result;
         }
 
         private bool isOcr2(char[,] ocrInput)
