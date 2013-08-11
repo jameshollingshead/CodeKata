@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using KataBankOCR.Code;
+using KataBankOCR.Shared;
 
 
 namespace KataBankOCR.UnitTest
@@ -13,86 +14,26 @@ namespace KataBankOCR.UnitTest
     class KataTest
     {
         public KataCode _kataCode;
-        
-        private char[,] _OCR1 = new char[3, 3]
-            {
-                {' ',' ',' '},
-                {' ',' ','|'},
-                {' ',' ','|'}   
-            };
-
-        private char[,] _OCR2 = new char[3, 3]
-            {
-                {' ','_',' '},
-                {' ','_','|'},
-                {'|','_',' '}
-            };
-        private char[,] _OCR3 = new char[3, 3]
-            {
-                {' ','_',' '},
-                {' ','_','|'},
-                {' ','_','|'}
-            };
-        private char[,] _OCR4 = new char[3, 3]
-            {
-                {' ',' ',' '},
-                {'|','_','|'},
-                {' ',' ','|'},
-            };
-        private char[,] _OCR5 = new char[3, 3]
-            {
-                {' ','_',' '},
-                {'|','_',' '},
-                {' ','_','|'}
-            };
-        private char[,] _OCR6 = new char[3, 3]
-            {
-                {' ','_',' '},
-                {'|','_',' '},
-                {'|','_','|'}
-            };
-        private char[,] _OCR7 = new char[3, 3]
-            {
-                {' ','_',' '},
-                {' ',' ','|'},
-                {' ',' ','|'}
-            };
-        private char[,] _OCR8 = new char[3, 3]
-            {
-                {' ','_',' '},
-                {'|','_','|'},
-                {'|','_','|'}
-            };
-        private char[,] _OCR9 = new char[3, 3]
-            {
-                {' ','_',' '},
-                {'|','_','|'},
-                {' ','_','|'}
-            };
-        private char[,] _OCR0 = new char[3, 3]
-            {
-                {' ','_',' '},
-                {'|',' ','|'},
-                {'|','_','|'}
-            };
-
-        private char[][,] _ocrAccountNumberAllZeros = new char[9][,];
+        private OcrConstants ocrConstants = new OcrConstants();
+        private string[][] _ocrAccountNumberAllZeros = new string[9][];
 
         [SetUp]
         public void SetupUnitTests()
         {
             _kataCode = new KataCode();
+            var ocr0 = ocrConstants.Ocr0;
             
             for (int i = 0; i < 9; i++)
             {
-                _ocrAccountNumberAllZeros[i] = _OCR0;
+                _ocrAccountNumberAllZeros[i] = ocr0;
             }
         }
 
         [Test]
         public void OcrNumberIs1()
         {
-            var actualResult = _kataCode.ConvertOCRtoDigit(_OCR1);
+            var ocr1 = ocrConstants.Ocr1;
+            var actualResult = _kataCode.ConvertOCRtoDigit(ocr1);
             var expectedResult = '1';
             Assert.AreEqual(actualResult, expectedResult);
         }
@@ -100,7 +41,8 @@ namespace KataBankOCR.UnitTest
         [Test]
         public void OcrNumberIs2()
         {
-            var actualResult = _kataCode.ConvertOCRtoDigit(_OCR2);
+            var ocr2 = ocrConstants.Ocr2;
+            var actualResult = _kataCode.ConvertOCRtoDigit(ocr2);
             var expectedResult = '2';
             Assert.AreEqual(actualResult, expectedResult);
         }
@@ -108,7 +50,8 @@ namespace KataBankOCR.UnitTest
         [Test]
         public void OcrNumberIs3()
         {
-            var actualResult = _kataCode.ConvertOCRtoDigit(_OCR3);
+            var ocr3 = ocrConstants.Ocr3;
+            var actualResult = _kataCode.ConvertOCRtoDigit(ocr3);
             var expectedResult = '3';
             Assert.AreEqual(actualResult, expectedResult);
         }
@@ -116,7 +59,8 @@ namespace KataBankOCR.UnitTest
         [Test]
         public void OcrNumberIs4()
         {
-            var actualResult = _kataCode.ConvertOCRtoDigit(_OCR4);
+            var ocr4 = ocrConstants.Ocr4;
+            var actualResult = _kataCode.ConvertOCRtoDigit(ocr4);
             var expectedResult = '4';
             Assert.AreEqual(actualResult, expectedResult);
         }
@@ -124,7 +68,8 @@ namespace KataBankOCR.UnitTest
         [Test]
         public void OcrNumberIs5()
         {
-            var actualResult = _kataCode.ConvertOCRtoDigit(_OCR5);
+            var ocr5 = ocrConstants.Ocr5;
+            var actualResult = _kataCode.ConvertOCRtoDigit(ocr5);
             var expectedResult = '5';
             Assert.AreEqual(actualResult, expectedResult);
         }
@@ -132,7 +77,8 @@ namespace KataBankOCR.UnitTest
         [Test]
         public void OcrNumberIs6()
         {
-            var actualResult = _kataCode.ConvertOCRtoDigit(_OCR6);
+            var ocr6 = ocrConstants.Ocr6;
+            var actualResult = _kataCode.ConvertOCRtoDigit(ocr6);
             var expectedResult = '6';
             Assert.AreEqual(actualResult, expectedResult);
         }
@@ -140,7 +86,8 @@ namespace KataBankOCR.UnitTest
         [Test]
         public void OcrNumberIs7()
         {
-            var actualResult = _kataCode.ConvertOCRtoDigit(_OCR7);
+            var ocr7 = ocrConstants.Ocr7;
+            var actualResult = _kataCode.ConvertOCRtoDigit(ocr7);
             var expectedResult = '7';
             Assert.AreEqual(actualResult, expectedResult);
         }
@@ -148,7 +95,8 @@ namespace KataBankOCR.UnitTest
         [Test]
         public void OcrNumberIs8()
         {
-            var actualResult = _kataCode.ConvertOCRtoDigit(_OCR8);
+            var ocr8 = ocrConstants.Ocr8;
+            var actualResult = _kataCode.ConvertOCRtoDigit(ocr8);
             var expectedResult = '8';
             Assert.AreEqual(actualResult, expectedResult);
         }
@@ -156,7 +104,8 @@ namespace KataBankOCR.UnitTest
         [Test]
         public void OcrNumberIs9()
         {
-            var actualResult = _kataCode.ConvertOCRtoDigit(_OCR9);
+            var ocr9 = ocrConstants.Ocr9;
+            var actualResult = _kataCode.ConvertOCRtoDigit(ocr9);
             var expectedResult = '9';
             Assert.AreEqual(actualResult, expectedResult);
         }
@@ -164,7 +113,8 @@ namespace KataBankOCR.UnitTest
         [Test]
         public void OcrNumberIs0()
         {
-            var actualResult = _kataCode.ConvertOCRtoDigit(_OCR0);
+            var ocr0 = ocrConstants.Ocr0;
+            var actualResult = _kataCode.ConvertOCRtoDigit(ocr0);
             var expectedResult = '0';
             Assert.AreEqual(actualResult, expectedResult);
         }

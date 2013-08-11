@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using KataBankOCR.Shared;
 
 namespace KataBankOCR.Code
 {
     public class KataCode
     {
 
-        public char ConvertOCRtoDigit(char[,] ocrInput)
+        OcrConstants ocrConstants = new OcrConstants();
+
+        public char ConvertOCRtoDigit(string[] ocrInput)
         {
             if (IsOcr1(ocrInput) == true)
                 return '1';
@@ -32,138 +35,93 @@ namespace KataBankOCR.Code
             return '0';
         }
 
-        private bool IsOcr9(char[,] ocrInput)
+        private bool IsOcr9(string[] ocrInput)
         {
             bool result;
-            char[,] ocr9 = new char[3, 3]
-            {
-                {' ','_',' '},
-                {'|','_','|'},
-                {' ','_','|'}
-            };
+            var ocr9 = ocrConstants.Ocr9;
             result = AreOcrDigitsEqual(ocrInput, ocr9);
             return result;
         }
 
-        private bool IsOcr8(char[,] ocrInput)
+        private bool IsOcr8(string[] ocrInput)
         {
             bool result;
-            char[,] ocr8 = new char[3, 3]
-            {
-                {' ','_',' '},
-                {'|','_','|'},
-                {'|','_','|'}
-            };
+            var ocr8 = ocrConstants.Ocr8;
             result = AreOcrDigitsEqual(ocrInput, ocr8);
             return result;
         }
 
-        private bool IsOcr7(char[,] ocrInput)
+        private bool IsOcr7(string[] ocrInput)
         {
             bool result;
-            char[,] ocr7 = new char[3, 3]
-            {
-                {' ','_',' '},
-                {' ',' ','|'},
-                {' ',' ','|'}
-            };
+            var ocr7 = ocrConstants.Ocr7;
             result = AreOcrDigitsEqual(ocrInput, ocr7);
             return result;
         }
 
-        private bool IsOcr6(char[,] ocrInput)
+        private bool IsOcr6(string[] ocrInput)
         {
             bool result;
-            char[,] ocr6 = new char[3, 3]
-            {
-                {' ','_',' '},
-                {'|','_',' '},
-                {'|','_','|'}
-            };
+            var ocr6 = ocrConstants.Ocr6;
             result = AreOcrDigitsEqual(ocrInput, ocr6);
             return result;
         }
 
-        private bool IsOcr5(char[,] ocrInput)
+        private bool IsOcr5(string[] ocrInput)
         {
             bool result;
-            char[,] ocr5 = new char[3, 3]
-            {
-                {' ','_',' '},
-                {'|','_',' '},
-                {' ','_','|'}
-            };
+            var ocr5 = ocrConstants.Ocr5;
             result = AreOcrDigitsEqual(ocrInput, ocr5);
             return result;
         }
 
-        private bool IsOcr4(char[,] ocrInput)
+        private bool IsOcr4(string[] ocrInput)
         {
             bool result;
-            char[,] ocr4 = new char[3, 3]
-            {
-                {' ',' ',' '},
-                {'|','_','|'},
-                {' ',' ','|'},
-            };
+            var ocr4 = ocrConstants.Ocr4;
             result = AreOcrDigitsEqual(ocrInput, ocr4);
             return result;
         }
 
-        private bool IsOcr3(char[,] ocrInput)
+        private bool IsOcr3(string[] ocrInput)
         {
             bool result;
-            char[,] ocr3 = new char[3, 3]
-            {
-                {' ','_',' '},
-                {' ','_','|'},
-                {' ','_','|'}
-            };
+            var ocr3 = ocrConstants.Ocr3;
             result = AreOcrDigitsEqual(ocrInput, ocr3);
             return result;
         }
 
-        private bool IsOcr2(char[,] ocrInput)
+        private bool IsOcr2(string[] ocrInput)
         {
             bool result;
-            char[,] ocr2 = new char[3, 3]
-            {
-                {' ','_',' '},
-                {' ','_','|'},
-                {'|','_',' '}
-            };
+            var ocr2 = ocrConstants.Ocr2;
             result = AreOcrDigitsEqual(ocrInput, ocr2);
             return result;
         }
 
-        private bool IsOcr1(char[,] ocrInput)
+        private bool IsOcr1(string[] ocrInput)
         {
             bool result;
-            char[,] ocr1 = new char[3,3]
-            {
-                {' ',' ',' '},
-                {' ',' ','|'},
-                {' ',' ','|'}   
-            };
+            var ocr1 = ocrConstants.Ocr1;
+            
             result = AreOcrDigitsEqual(ocrInput, ocr1);
             return result;
         }
 
-        private static bool AreOcrDigitsEqual(char[,] ocrInput, char[,] ocrToTestAgainst)
+        private static bool AreOcrDigitsEqual(string[] ocrInput, string[] ocrToTestAgainst)
         {
-            for (int x = 0; x < 3; x++)
+            bool areEqual;
+            for (int x = 0; x < ocrInput.Length; x++)
             {
-                for (int y = 0; y < 3; y++)
-                {
-                    if (ocrInput[x, y] != ocrToTestAgainst[x, y])
-                        return false;
-                }
+                areEqual = String.Equals(ocrInput[x], ocrToTestAgainst[x]);
+                if (areEqual == false)
+                    return false;
             }
 
             return true;
         }
 
-        public string ConvertOcrAccountNumberToDigitAccountNumber(char[][,] ocrAccountNumber)
+        public string ConvertOcrAccountNumberToDigitAccountNumber(string[][] ocrAccountNumber)
         {
             string result = "";
 

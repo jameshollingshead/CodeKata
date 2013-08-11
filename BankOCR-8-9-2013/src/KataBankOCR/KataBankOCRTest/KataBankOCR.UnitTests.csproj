@@ -51,6 +51,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\KataBankOCR.Shared\KataBankOCR.Shared.csproj">
+      <Project>{56B9E503-7EB7-4A9B-B301-67CFC4836FD3}</Project>
+      <Name>KataBankOCR.Shared</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KataBankOCRCode\KataBankOCR.Code.csproj">
       <Project>{80DE2E13-9F15-4105-8EAB-1A2C965C412B}</Project>
       <Name>KataBankOCR.Code</Name>

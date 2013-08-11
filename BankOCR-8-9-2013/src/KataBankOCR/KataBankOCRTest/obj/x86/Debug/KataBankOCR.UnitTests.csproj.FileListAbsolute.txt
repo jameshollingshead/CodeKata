@@ -7,3 +7,5 @@ C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRTest
 C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRTest\bin\Debug\KataBankOCRTest.dll
 C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRTest\bin\Debug\KataBankOCRCode.dll
 C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRTest\obj\x86\Debug\KataBankOCRTest.dll
+C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRTest\bin\Debug\KataBankOCR.Shared.dll
+C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRTest\bin\Debug\KataBankOCR.Shared.pdb
