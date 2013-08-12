@@ -156,5 +156,40 @@ namespace KataBankOCR.Code
 
             return result;
         }
+
+        private string[][] TurnOcrAccountNumberListIntoOcrAccountNumbers(string[] testInput)
+        {
+            int numOfAccountNumbers = (testInput.Length / 4);
+            string[][] ocrAccountNumberSet = new string[numOfAccountNumbers][];
+            string[] singleOcrAccountNumber = new string[3];
+
+            for (int i = 0, j=0; i < testInput.Length; i += 4,j++)
+            {
+                for (int k = 0; k < 3; k++)
+                {
+                    singleOcrAccountNumber[k] = testInput[i + k];
+                }
+                ocrAccountNumberSet[j] = singleOcrAccountNumber;
+            }
+
+            return ocrAccountNumberSet;
+        }
+
+        public string[] TurnFileContentsIntoDigitalAccountNumbers(string[] testInput)
+        {
+            int numberOfAccounts = testInput.Length;
+            string[][] ocrAccountNumberSet;
+
+            ocrAccountNumberSet = TurnOcrAccountNumberListIntoOcrAccountNumbers(testInput);
+
+            var result = new string[ocrAccountNumberSet.Length];
+
+            for (int i = 0; i < ocrAccountNumberSet.Length; i++)
+            {
+                result[i] = OcrAccountStringToDigitalAccountNumber(ocrAccountNumberSet[i]);
+            }
+
+            return result;
+        }
     }
 }

@@ -141,5 +141,22 @@ namespace KataBankOCR.UnitTest
             var expectedResult = "000000000";
             Assert.AreEqual(actualResult, expectedResult);
         }
+
+        [Test]
+        public void FourLineAccountNumberFileWithAllZeroOcrAccountNumberBecomesStringOfZeros()
+        {
+            string[] testInput = 
+            {
+                " _  _  _  _  _  _  _  _  _ ",
+                "| || || || || || || || || |",
+                "|_||_||_||_||_||_||_||_||_|",
+                "                           "
+            };
+
+            var actualResult = _kataCode.TurnFileContentsIntoDigitalAccountNumbers(testInput);
+            var expectedResult = "000000000";
+            Assert.AreEqual(actualResult[0], expectedResult);
+
+        }
     }
 }
