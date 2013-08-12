@@ -132,5 +132,29 @@ namespace KataBankOCR.Code
 
             return result;
         }
+
+        private string[][] ConvertOcrAccountStringToArrayOfOcrNumbers(string[] ocrAccountNumber)
+        {
+            var ocr0 = ocrConstants.Ocr0;
+            string[][] result = new string[9][];
+
+                for (int i = 0; i < 9; i++)
+            {
+                result[i] = ocr0;
+            }
+
+            return result;
+        }
+
+        public string OcrAccountStringToDigitalAccountNumber(string[] ocrAccountNumber)
+        {
+            string result = string.Empty;
+            string[][] ocrDigitAccountNumber;
+
+            ocrDigitAccountNumber = ConvertOcrAccountStringToArrayOfOcrNumbers(ocrAccountNumber);
+            result = ConvertOcrAccountNumberToDigitAccountNumber(ocrDigitAccountNumber);
+
+            return result;
+        }
     }
 }

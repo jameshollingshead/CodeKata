@@ -125,8 +125,21 @@ namespace KataBankOCR.UnitTest
             var actualResult = _kataCode.ConvertOcrAccountNumberToDigitAccountNumber(_ocrAccountNumberAllZeros);
             var expectedResult = "000000000";
             Assert.AreEqual(actualResult, expectedResult);
-            
+        }
 
+        [Test]
+        public void OcrAccountNumberOfAllZerosBecomesStringOfZeros()
+        {
+            string[] testInput = 
+            {
+                " _  _  _  _  _  _  _  _  _ ",
+                "| || || || || || || || || |",
+                "|_||_||_||_||_||_||_||_||_|"
+            };
+
+            var actualResult = _kataCode.OcrAccountStringToDigitalAccountNumber(testInput);
+            var expectedResult = "000000000";
+            Assert.AreEqual(actualResult, expectedResult);
         }
     }
 }
