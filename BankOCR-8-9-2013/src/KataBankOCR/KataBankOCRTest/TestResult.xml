@@ -1,43 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRTest\KataBankOCR.UnitTests.csproj" total="25" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2013-08-13" time="11:17:29">
+<test-results name="C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRTest\KataBankOCR.UnitTests.csproj" total="27" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2013-08-13" time="12:50:10">
   <environment nunit-version="2.6.2.12296" clr-version="2.0.50727.5472" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRTest" machine-name="ELDERWYRM" user="James" user-domain="ElderWyrm" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Project" name="C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRTest\KataBankOCR.UnitTests.csproj" executed="True" result="Success" success="True" time="0.250" asserts="0">
+  <test-suite type="Project" name="C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRTest\KataBankOCR.UnitTests.csproj" executed="True" result="Success" success="True" time="0.270" asserts="0">
     <results>
-      <test-suite type="Assembly" name="C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRTest\bin\Debug\KataBankOCRTest.dll" executed="True" result="Success" success="True" time="0.234" asserts="0">
+      <test-suite type="Assembly" name="C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRTest\bin\Debug\KataBankOCRTest.dll" executed="True" result="Success" success="True" time="0.260" asserts="0">
         <results>
-          <test-suite type="Namespace" name="KataBankOCR" executed="True" result="Success" success="True" time="0.234" asserts="0">
+          <test-suite type="Namespace" name="KataBankOCR" executed="True" result="Success" success="True" time="0.256" asserts="0">
             <results>
-              <test-suite type="Namespace" name="UnitTest" executed="True" result="Success" success="True" time="0.234" asserts="0">
+              <test-suite type="Namespace" name="UnitTest" executed="True" result="Success" success="True" time="0.256" asserts="0">
                 <results>
-                  <test-suite type="TestFixture" name="KataTest" executed="True" result="Success" success="True" time="0.218" asserts="0">
+                  <test-suite type="TestFixture" name="KataTest" executed="True" result="Success" success="True" time="0.254" asserts="0">
                     <results>
-                      <test-case name="KataBankOCR.UnitTest.KataTest.EightLineAccountNumberFileWithAllOnesOcrAccountNumberBecomesStringOfOnes" executed="True" result="Success" success="True" time="0.062" asserts="1" />
-                      <test-case name="KataBankOCR.UnitTest.KataTest.EightLineAccountNumberFileWithAllZeroOcrAccountNumberBecomesStringOfZeros" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="KataBankOCR.UnitTest.KataTest.ChecksumReturnsFalseForInvalidAccountNumber" executed="True" result="Success" success="True" time="0.045" asserts="1" />
+                      <test-case name="KataBankOCR.UnitTest.KataTest.ChecksumReturnsTrueForValidAccountNumber" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="KataBankOCR.UnitTest.KataTest.EightLineAccountNumberFileWithAllOnesOcrAccountNumberBecomesStringOfOnes" executed="True" result="Success" success="True" time="0.010" asserts="1" />
+                      <test-case name="KataBankOCR.UnitTest.KataTest.EightLineAccountNumberFileWithAllZeroOcrAccountNumberBecomesStringOfZeros" executed="True" result="Success" success="True" time="0.001" asserts="1" />
                       <test-case name="KataBankOCR.UnitTest.KataTest.FourLineAccountNumberFileWithAllEightsOcrAccountNumberBecomesStringOfEights" executed="True" result="Success" success="True" time="0.000" asserts="1" />
                       <test-case name="KataBankOCR.UnitTest.KataTest.FourLineAccountNumberFileWithAllOnesOcrAccountNumberBecomesStringOfOnes" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-                      <test-case name="KataBankOCR.UnitTest.KataTest.FourLineAccountNumberFileWithAllZeroOcrAccountNumberBecomesStringOfZeros" executed="True" result="Success" success="True" time="0.016" asserts="1" />
+                      <test-case name="KataBankOCR.UnitTest.KataTest.FourLineAccountNumberFileWithAllZeroOcrAccountNumberBecomesStringOfZeros" executed="True" result="Success" success="True" time="0.001" asserts="1" />
                       <test-case name="KataBankOCR.UnitTest.KataTest.FourLineAccountNumberFileWithOneZeroPatternOcrAccountNumberBecomesStringOf101010101" executed="True" result="Success" success="True" time="0.000" asserts="1" />
                       <test-case name="KataBankOCR.UnitTest.KataTest.OcrAccountNumber101010101BecomesStringOf101010101" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-                      <test-case name="KataBankOCR.UnitTest.KataTest.OcrAccountNumberOfAllEightsBecomesStringOfEights" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-                      <test-case name="KataBankOCR.UnitTest.KataTest.OcrAccountNumberOfAllOnesBecomesStringOfOnes" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="KataBankOCR.UnitTest.KataTest.OcrAccountNumberOfAllEightsBecomesStringOfEights" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="KataBankOCR.UnitTest.KataTest.OcrAccountNumberOfAllOnesBecomesStringOfOnes" executed="True" result="Success" success="True" time="0.001" asserts="1" />
                       <test-case name="KataBankOCR.UnitTest.KataTest.OcrAccountNumberOfAllZerosBecomesStringOfZeros" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-                      <test-case name="KataBankOCR.UnitTest.KataTest.OcrNumberIs0" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="KataBankOCR.UnitTest.KataTest.OcrNumberIs0" executed="True" result="Success" success="True" time="0.003" asserts="1" />
                       <test-case name="KataBankOCR.UnitTest.KataTest.OcrNumberIs1" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-                      <test-case name="KataBankOCR.UnitTest.KataTest.OcrNumberIs2" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-                      <test-case name="KataBankOCR.UnitTest.KataTest.OcrNumberIs3" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="KataBankOCR.UnitTest.KataTest.OcrNumberIs2" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="KataBankOCR.UnitTest.KataTest.OcrNumberIs3" executed="True" result="Success" success="True" time="0.001" asserts="1" />
                       <test-case name="KataBankOCR.UnitTest.KataTest.OcrNumberIs4" executed="True" result="Success" success="True" time="0.000" asserts="1" />
                       <test-case name="KataBankOCR.UnitTest.KataTest.OcrNumberIs5" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-                      <test-case name="KataBankOCR.UnitTest.KataTest.OcrNumberIs6" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="KataBankOCR.UnitTest.KataTest.OcrNumberIs6" executed="True" result="Success" success="True" time="0.001" asserts="1" />
                       <test-case name="KataBankOCR.UnitTest.KataTest.OcrNumberIs7" executed="True" result="Success" success="True" time="0.000" asserts="1" />
                       <test-case name="KataBankOCR.UnitTest.KataTest.OcrNumberIs8" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-                      <test-case name="KataBankOCR.UnitTest.KataTest.OcrNumberIs9" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-                      <test-case name="KataBankOCR.UnitTest.KataTest.ReadInputFromFileAndReturnAccountNumberOfAllOnes" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-                      <test-case name="KataBankOCR.UnitTest.KataTest.ReadInputFromFileAndReturnAccountNumberOfAllZeros" executed="True" result="Success" success="True" time="0.016" asserts="1" />
-                      <test-case name="KataBankOCR.UnitTest.KataTest.RecognizeOcrAccountNumberWithAllOnes" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-                      <test-case name="KataBankOCR.UnitTest.KataTest.RecognizeOcrAccountNumberWithAllZeros" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-                      <test-case name="KataBankOCR.UnitTest.KataTest.RecognizeOcrAccountNumberWithOnesZeroPattern" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="KataBankOCR.UnitTest.KataTest.OcrNumberIs9" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="KataBankOCR.UnitTest.KataTest.ReadInputFromFileAndReturnAccountNumberOfAllOnes" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                      <test-case name="KataBankOCR.UnitTest.KataTest.ReadInputFromFileAndReturnAccountNumberOfAllZeros" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="KataBankOCR.UnitTest.KataTest.RecognizeOcrAccountNumberWithAllOnes" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="KataBankOCR.UnitTest.KataTest.RecognizeOcrAccountNumberWithAllZeros" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="KataBankOCR.UnitTest.KataTest.RecognizeOcrAccountNumberWithOnesZeroPattern" executed="True" result="Success" success="True" time="0.001" asserts="1" />
                     </results>
                   </test-suite>
                 </results>

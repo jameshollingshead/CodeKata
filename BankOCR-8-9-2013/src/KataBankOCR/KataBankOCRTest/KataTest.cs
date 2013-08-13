@@ -326,6 +326,23 @@ namespace KataBankOCR.UnitTest
             var expectedResult = "111111111";
             Assert.AreEqual(expectedResult, actualResult[1]);
         }
-        
+
+        [Test]
+        public void ChecksumReturnsTrueForValidAccountNumber()
+        {
+            string validAccountNumber = "457508000";
+            var actualResult = _kataCode.IsCheckSumValid(validAccountNumber);
+
+            Assert.IsTrue(actualResult);
+        }
+
+        [Test]
+        public void ChecksumReturnsFalseForInvalidAccountNumber()
+        {
+            string validAccountNumber = "111111111";
+            var actualResult = _kataCode.IsCheckSumValid(validAccountNumber);
+
+            Assert.IsFalse(actualResult);
+        }
     }
 }

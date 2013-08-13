@@ -164,17 +164,17 @@ namespace KataBankOCR.Code
             return result;
         }
 
-        private string[][] TurnOcrAccountNumberListIntoOcrAccountNumbers(string[] testInput)
+        private string[][] TurnOcrAccountNumberListIntoOcrAccountNumbers(string[] inputFromFile)
         {
-            int numOfAccountNumbers = (testInput.Length / 4);
+            int numOfAccountNumbers = (inputFromFile.Length / 4);
             string[][] ocrAccountNumberSet = new string[numOfAccountNumbers][];
             string[] singleOcrAccountNumber = new string[3];
 
-            for (int i = 0, j=0; i < testInput.Length; i += 4,j++)
+            for (int i = 0, j = 0; i < inputFromFile.Length; i += 4, j++)
             {
                 for (int k = 0; k < 3; k++)
                 {
-                    singleOcrAccountNumber[k] = testInput[i + k];
+                    singleOcrAccountNumber[k] = inputFromFile[i + k];
                 }
                 ocrAccountNumberSet[j] = singleOcrAccountNumber;
                 singleOcrAccountNumber = new string[3];
@@ -218,5 +218,41 @@ namespace KataBankOCR.Code
 
             return result;
         }
+
+        public bool IsCheckSumValid(string accountNumber)
+        {
+            int compareCheckSumTo = 0;
+            int checkSum;
+            checkSum = CalculateChecksum(accountNumber);
+
+            if (checkSum == compareCheckSumTo)
+                return true;
+            else
+                return false;
+            
+        }
+
+        private static int CalculateChecksum(string accountNumber)
+        {
+            int checkSum;
+            int placeholder = 0;
+            char[] reversedAccountNumberArray;
+            int accountInt;
+
+            reversedAccountNumberArray = accountNumber.ToCharArray();
+            Array.Reverse(reversedAccountNumberArray);
+            accountInt = Convert.ToInt32(accountNumber);
+
+            for (int i = 0; i < 9; i++)
+            {
+                placeholder += Int32.Parse(reversedAccountNumberArray[i].ToString()) * (i + 1);
+            }
+
+            checkSum = placeholder % 11;
+            return checkSum;
+        }
+
+        
+
     }
 }
