@@ -133,18 +133,25 @@ namespace KataBankOCR.Code
             return result;
         }
 
-        private string[][] ConvertOcrAccountStringToArrayOfOcrNumbers(string[] ocrAccountNumber)
+        private string[][] ConvertOcrAccountStringToArrayOfOcrNumbers(string[] ocrAccountString)
         {
-            var ocr0 = ocrConstants.Ocr0;
-            string[][] result = new string[9][];
+            string[] ocrDigit = new string[3];
+            string[][] ocrAccountNumber = new string[9][];
 
-                for (int i = 0; i < 9; i++)
+
+            for (int i = 0; i < 9; i++)
             {
-                result[i] = ocr0;
+                int position = i * 3;
+                ocrDigit[0] = ocrAccountString[0].Substring(position, 3);
+                ocrDigit[1] = ocrAccountString[1].Substring(position, 3);
+                ocrDigit[2] = ocrAccountString[2].Substring(position, 3);
+                ocrAccountNumber[i] = ocrDigit;
+                ocrDigit = new string[3];
             }
-
-            return result;
+           
+            return ocrAccountNumber;
         }
+
 
         public string OcrAccountStringToDigitalAccountNumber(string[] ocrAccountNumber)
         {
@@ -170,17 +177,18 @@ namespace KataBankOCR.Code
                     singleOcrAccountNumber[k] = testInput[i + k];
                 }
                 ocrAccountNumberSet[j] = singleOcrAccountNumber;
+                singleOcrAccountNumber = new string[3];
             }
 
             return ocrAccountNumberSet;
         }
 
-        public string[] TurnFileContentsIntoDigitalAccountNumbers(string[] testInput)
+        public string[] TurnFileContentsIntoDigitalAccountNumbers(string[] inputFromFile)
         {
-            int numberOfAccounts = testInput.Length;
+            int numberOfAccounts = inputFromFile.Length;
             string[][] ocrAccountNumberSet;
 
-            ocrAccountNumberSet = TurnOcrAccountNumberListIntoOcrAccountNumbers(testInput);
+            ocrAccountNumberSet = TurnOcrAccountNumberListIntoOcrAccountNumbers(inputFromFile);
 
             var result = new string[ocrAccountNumberSet.Length];
 
@@ -188,6 +196,25 @@ namespace KataBankOCR.Code
             {
                 result[i] = OcrAccountStringToDigitalAccountNumber(ocrAccountNumberSet[i]);
             }
+
+            return result;
+        }
+
+        public string[] TurnFileIntoDigitalAccountNumbers(string fileName)
+        {
+            string[] inputFromFile;
+            string[] listOfDigitalAccountNumbers;
+
+            inputFromFile = TurnFileIntoArrayOfStrings(fileName);
+            listOfDigitalAccountNumbers = TurnFileContentsIntoDigitalAccountNumbers(inputFromFile);
+            return listOfDigitalAccountNumbers;
+        }
+
+        private string[] TurnFileIntoArrayOfStrings(string fileName)
+        {
+            string[] result;
+
+                result = System.IO.File.ReadAllLines(fileName);
 
             return result;
         }

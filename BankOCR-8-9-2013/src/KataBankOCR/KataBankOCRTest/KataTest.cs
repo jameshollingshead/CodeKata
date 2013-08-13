@@ -16,6 +16,8 @@ namespace KataBankOCR.UnitTest
         public KataCode _kataCode;
         private OcrConstants ocrConstants = new OcrConstants();
         private string[][] _ocrAccountNumberAllZeros = new string[9][];
+        private string[][] _ocrAccountNumberAllOnes = new string[9][];
+        private string[][] _ocrAccountNumberOneZero = new string[9][];
 
         private string[] _dummyFileInput = 
             {
@@ -29,17 +31,61 @@ namespace KataBankOCR.UnitTest
                 "                           "
             };
 
+        private string[] _dummyFileInputOneAccountNumberOfOnes = 
+            {
+                "                           ",
+                "  |  |  |  |  |  |  |  |  |",
+                "  |  |  |  |  |  |  |  |  |",
+                "                           "
+            };
+
+        private string[] _dummyFileInputOneAccountNumberOfZeros = 
+            {
+                " _  _  _  _  _  _  _  _  _ ",
+                "| || || || || || || || || |",
+                "|_||_||_||_||_||_||_||_||_|",
+                "                           "
+            };
+
+        private string[] _dummyFileInputOneAccountNumber101010101 = 
+            {
+                "    _     _     _     _    ",
+                "  || |  || |  || |  || |  |",
+                "  ||_|  ||_|  ||_|  ||_|  |",
+                "                           "
+            };
+
+        private string[] _dummyFileInputOneAccountNumberOfEights = 
+            {
+                " _  _  _  _  _  _  _  _  _ ",
+                "|_||_||_||_||_||_||_||_||_|",
+                "|_||_||_||_||_||_||_||_||_|",
+                "                           "
+            };
+
         [SetUp]
         public void SetupUnitTests()
         {
             _kataCode = new KataCode();
             var ocr0 = ocrConstants.Ocr0;
+            var ocr1 = ocrConstants.Ocr1;
             
             for (int i = 0; i < 9; i++)
             {
                 _ocrAccountNumberAllZeros[i] = ocr0;
+                _ocrAccountNumberAllOnes[i] = ocr1;
+            }
+
+            for (int j = 0; j < 9; j++)
+            {
+                if ((j == 0) || (j % 2 == 0))
+                    _ocrAccountNumberOneZero[j] = ocr1;
+                else
+                    _ocrAccountNumberOneZero[j] = ocr0;
             }
         }
+
+
 
         [Test]
         public void OcrNumberIs1()
@@ -140,6 +186,22 @@ namespace KataBankOCR.UnitTest
         }
 
         [Test]
+        public void RecognizeOcrAccountNumberWithAllOnes()
+        {
+            var actualResult = _kataCode.ConvertOcrAccountNumberToDigitAccountNumber(_ocrAccountNumberAllOnes);
+            var expectedResult = "111111111";
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void RecognizeOcrAccountNumberWithOnesZeroPattern()
+        {
+            var actualResult = _kataCode.ConvertOcrAccountNumberToDigitAccountNumber(_ocrAccountNumberOneZero);
+            var expectedResult = "101010101";
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
         public void OcrAccountNumberOfAllZerosBecomesStringOfZeros()
         {
             string[] testInput = 
@@ -155,10 +217,95 @@ namespace KataBankOCR.UnitTest
         }
 
         [Test]
+        public void OcrAccountNumberOfAllOnesBecomesStringOfOnes()
+        {
+            string[] testInput = 
+            {
+                "                           ",
+                "  |  |  |  |  |  |  |  |  |",
+                "  |  |  |  |  |  |  |  |  |"
+            };
+
+            var actualResult = _kataCode.OcrAccountStringToDigitalAccountNumber(testInput);
+            var expectedResult = "111111111";
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void OcrAccountNumberOfAllEightsBecomesStringOfEights()
+        {
+            string[] testInput = 
+            {
+                " _  _  _  _  _  _  _  _  _ ",
+                "|_||_||_||_||_||_||_||_||_|",
+                "|_||_||_||_||_||_||_||_||_|"
+            };
+
+            var actualResult = _kataCode.OcrAccountStringToDigitalAccountNumber(testInput);
+            var expectedResult = "888888888";
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void OcrAccountNumber101010101BecomesStringOf101010101()
+        {
+            string[] testInput = 
+            {
+                "    _     _     _     _    ",
+                "  || |  || |  || |  || |  |",
+                "  ||_|  ||_|  ||_|  ||_|  |"
+            };
+
+            var actualResult = _kataCode.OcrAccountStringToDigitalAccountNumber(testInput);
+            var expectedResult = "101010101";
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
         public void EightLineAccountNumberFileWithAllZeroOcrAccountNumberBecomesStringOfZeros()
         {
             var actualResult = _kataCode.TurnFileContentsIntoDigitalAccountNumbers(_dummyFileInput);
             var expectedResult = "000000000";
+            Assert.AreEqual(expectedResult, actualResult[0]);
+        }
+
+        [Test]
+        public void EightLineAccountNumberFileWithAllOnesOcrAccountNumberBecomesStringOfOnes()
+        {
+            var actualResult = _kataCode.TurnFileContentsIntoDigitalAccountNumbers(_dummyFileInput);
+            var expectedResult = "111111111";
+            Assert.AreEqual(expectedResult, actualResult[1]);
+        }
+
+        [Test]
+        public void FourLineAccountNumberFileWithAllOnesOcrAccountNumberBecomesStringOfOnes()
+        {
+            var actualResult = _kataCode.TurnFileContentsIntoDigitalAccountNumbers(_dummyFileInputOneAccountNumberOfOnes);
+            var expectedResult = "111111111";
+            Assert.AreEqual(expectedResult, actualResult[0]);
+        }
+
+        [Test]
+        public void FourLineAccountNumberFileWithAllZeroOcrAccountNumberBecomesStringOfZeros()
+        {
+            var actualResult = _kataCode.TurnFileContentsIntoDigitalAccountNumbers(_dummyFileInputOneAccountNumberOfZeros);
+            var expectedResult = "000000000";
+            Assert.AreEqual(expectedResult, actualResult[0]);
+        }
+
+        [Test]
+        public void FourLineAccountNumberFileWithOneZeroPatternOcrAccountNumberBecomesStringOf101010101()
+        {
+            var actualResult = _kataCode.TurnFileContentsIntoDigitalAccountNumbers(_dummyFileInputOneAccountNumber101010101);
+            var expectedResult = "101010101";
+            Assert.AreEqual(expectedResult, actualResult[0]);
+        }
+
+        [Test]
+        public void FourLineAccountNumberFileWithAllEightsOcrAccountNumberBecomesStringOfEights()
+        {
+            var actualResult = _kataCode.TurnFileContentsIntoDigitalAccountNumbers(_dummyFileInputOneAccountNumberOfEights);
+            var expectedResult = "888888888";
             Assert.AreEqual(expectedResult, actualResult[0]);
         }
 
@@ -169,6 +316,15 @@ namespace KataBankOCR.UnitTest
             var actualResult = _kataCode.TurnFileIntoDigitalAccountNumbers(dummyFileName);
             var expectedResult = "000000000";
             Assert.AreEqual(expectedResult, actualResult[0]);
+        }
+
+        [Test]
+        public void ReadInputFromFileAndReturnAccountNumberOfAllOnes()
+        {
+            string dummyFileName = "testfile.txt";
+            var actualResult = _kataCode.TurnFileIntoDigitalAccountNumbers(dummyFileName);
+            var expectedResult = "111111111";
+            Assert.AreEqual(expectedResult, actualResult[1]);
         }
         
     }

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
   <TopNode>[0-1000]C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRTest\KataBankOCR.UnitTests.csproj</TopNode>
-  <SelectedNode>[0-1014]KataBankOCR.UnitTest.KataTest.EightLineAccountNumberFileWithAllZeroOcrAccountNumberBecomesStringOfZeros</SelectedNode>
+  <SelectedNode>[0-1017]KataBankOCR.UnitTest.KataTest.OcrAccountNumber101010101BecomesStringOf101010101</SelectedNode>
   <ExcludeCategories>false</ExcludeCategories>
   <Nodes>
     <Node UniqueName="[0-1000]C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRTest\KataBankOCR.UnitTests.csproj" Expanded="true" />
-    <Node UniqueName="[0-1016]C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRTest\bin\Debug\KataBankOCRTest.dll" Expanded="true" />
-    <Node UniqueName="[0-1017]KataBankOCR" Expanded="true" />
-    <Node UniqueName="[0-1018]KataBankOCR.UnitTest" Expanded="true" />
+    <Node UniqueName="[0-1026]C:\Code\Github\C_Sharp\CodeKata\BankOCR-8-9-2013\src\KataBankOCR\KataBankOCRTest\bin\Debug\KataBankOCRTest.dll" Expanded="true" />
+    <Node UniqueName="[0-1027]KataBankOCR" Expanded="true" />
+    <Node UniqueName="[0-1028]KataBankOCR.UnitTest" Expanded="true" />
     <Node UniqueName="[0-1001]KataBankOCR.UnitTest.KataTest" Expanded="true" />
   </Nodes>
 </VisualState>
