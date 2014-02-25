@@ -46,6 +46,16 @@ namespace ReverseAndAdd.UnitTests
             var actualResult = _reverseAndAdd.AddTwoNumberStrings(forward, backward);
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+        [Test]
+        public void Adding777and345Gives1122()
+        {
+            var forward = "777";
+            var backward = "345";
+            var expectedResult = "1122";
+            var actualResult = _reverseAndAdd.AddTwoNumberStrings(forward, backward);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
     }
 
     
