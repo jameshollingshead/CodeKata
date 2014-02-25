@@ -24,7 +24,7 @@ namespace ReverseAndAdd.UnitTests
         {
             var forward = "123";
             var expectedResult = "321";
-            var actualResult = _reverseAndAdd.ReverseNumberAsString(forward);
+            var actualResult = _reverseAndAdd.ReverseString(forward);
             Assert.AreEqual(expectedResult, actualResult);
         }
 
@@ -33,7 +33,7 @@ namespace ReverseAndAdd.UnitTests
         {
             var forward = "957";
             var expectedResult = "759";
-            var actualResult = _reverseAndAdd.ReverseNumberAsString(forward);
+            var actualResult = _reverseAndAdd.ReverseString(forward);
             Assert.AreEqual(expectedResult, actualResult);
         }
 
@@ -56,6 +56,70 @@ namespace ReverseAndAdd.UnitTests
             var actualResult = _reverseAndAdd.AddTwoNumberStrings(forward, backward);
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+        [Test]
+        public void Number1234IsNotAPalindrome()
+        {
+            var palindromeCandidate = "1234";
+            var expectedResult = false;
+            var actualResult = _reverseAndAdd.IsPalindrome(palindromeCandidate);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void Number134IsNotAPalindrome()
+        {
+            var palindromeCandidate = "134";
+            var expectedResult = false;
+            var actualResult = _reverseAndAdd.IsPalindrome(palindromeCandidate);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void Number14IsNotAPalindrome()
+        {
+            var palindromeCandidate = "14";
+            var expectedResult = false;
+            var actualResult = _reverseAndAdd.IsPalindrome(palindromeCandidate);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void Number1221IsAPalindrome()
+        {
+            var palindromeCandidate = "1221";
+            var expectedResult = true;
+            var actualResult = _reverseAndAdd.IsPalindrome(palindromeCandidate);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void Number1IsAPalindrome()
+        {
+            var palindromeCandidate = "1";
+            var expectedResult = true;
+            var actualResult = _reverseAndAdd.IsPalindrome(palindromeCandidate);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void Number11IsAPalindrome()
+        {
+            var palindromeCandidate = "11";
+            var expectedResult = true;
+            var actualResult = _reverseAndAdd.IsPalindrome(palindromeCandidate);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void Number121IsAPalindrome()
+        {
+            var palindromeCandidate = "121";
+            var expectedResult = true;
+            var actualResult = _reverseAndAdd.IsPalindrome(palindromeCandidate);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
     }
 
     

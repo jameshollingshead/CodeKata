@@ -8,7 +8,7 @@ namespace ReverseAndAdd
 {
     public class ReverseAndAdd
     {
-        public string ReverseNumberAsString(string input)
+        public string ReverseString(string input)
         {
             string forward = input;
             char[] charArray = forward.ToCharArray();
@@ -27,5 +27,13 @@ namespace ReverseAndAdd
             string resultAsString = result.ToString();
             return resultAsString;
        }
+
+        public bool IsPalindrome(string palindromeCandidate)
+        {
+            string forward = palindromeCandidate;
+            string backward = ReverseString(forward);
+            
+            return (forward == backward);
+        }
     }
 }
