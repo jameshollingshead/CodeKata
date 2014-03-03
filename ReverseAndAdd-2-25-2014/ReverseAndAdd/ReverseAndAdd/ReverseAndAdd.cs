@@ -60,5 +60,13 @@ namespace ReverseAndAdd
             palindrome.numberOfAdditions = i;
             return palindrome;
         }
+
+        public string[] ReadFromFile(string fileName)
+        {
+            string[] result;
+            result = System.IO.File.ReadAllLines(fileName);
+
+            return result;
+        }
     }
 }

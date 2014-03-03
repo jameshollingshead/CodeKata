@@ -133,7 +133,6 @@ namespace ReverseAndAdd.UnitTests
             Assert.AreEqual(expectedResult.numberOfAdditions, actualResult.numberOfAdditions);
         }
 
-        
         [Test]
         public void Number195Has9339AsAPalindromeIn4Additions()
         {
@@ -144,6 +143,18 @@ namespace ReverseAndAdd.UnitTests
             var actualResult = _reverseAndAdd.FindPalindrome(input);
             Assert.AreEqual(expectedResult.palindrome, actualResult.palindrome);
             Assert.AreEqual(expectedResult.numberOfAdditions, actualResult.numberOfAdditions);
+        }
+
+        [Test]
+        public void ReadFromFileShouldGive123_111_195()
+        {
+            string[] expectedResult = {"123", "111", "195"};
+            var fileName = "testfile.txt";
+            string[] actualResult = _reverseAndAdd.ReadFromFile(fileName);
+            
+            Assert.AreEqual(expectedResult[0], actualResult[0]);
+            Assert.AreEqual(expectedResult[1], actualResult[1]);
+            Assert.AreEqual(expectedResult[2], actualResult[2]);
         }
         
     }
