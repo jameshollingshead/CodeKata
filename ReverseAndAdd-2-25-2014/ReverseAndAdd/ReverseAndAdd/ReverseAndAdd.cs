@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace ReverseAndAdd
 {
     public class ReverseAndAdd
@@ -20,9 +22,9 @@ namespace ReverseAndAdd
 
         public string AddTwoNumberStrings(string forward, string backward)
         {
-            int forwardAsInt = Convert.ToInt32(forward);
-            int backwardAsInt = Convert.ToInt32(backward);
-            int result = forwardAsInt + backwardAsInt;
+            long forwardAsLong = Convert.ToInt64(forward);
+            long backwardAsLong = Convert.ToInt64(backward);
+            long result = forwardAsLong + backwardAsLong;
 
             string resultAsString = result.ToString();
             return resultAsString;
@@ -34,6 +36,29 @@ namespace ReverseAndAdd
             string backward = ReverseString(forward);
             
             return (forward == backward);
+        }
+
+        public Palindrome FindPalindrome(string input)
+        {
+            Palindrome palindrome = new Palindrome();
+            string forward = input;
+            string backward;
+            string palindromeCandidate;
+            int i = 0;
+            bool isPalindrome = false;
+
+            do
+            {
+                backward = ReverseString(forward);
+                palindromeCandidate = AddTwoNumberStrings(forward, backward);
+                forward = palindromeCandidate;
+                i++;
+                isPalindrome = IsPalindrome(forward);
+            } while (i <= 100 && isPalindrome == false);
+
+            palindrome.palindrome = forward;
+            palindrome.numberOfAdditions = i;
+            return palindrome;
         }
     }
 }

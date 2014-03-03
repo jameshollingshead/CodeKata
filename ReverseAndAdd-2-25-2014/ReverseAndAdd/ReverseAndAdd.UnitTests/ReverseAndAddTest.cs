@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using ReverseAndAdd;
 
+
 namespace ReverseAndAdd.UnitTests
 {
     [TestFixture]
@@ -120,6 +121,31 @@ namespace ReverseAndAdd.UnitTests
             Assert.AreEqual(expectedResult, actualResult);
         }
 
+        [Test]
+        public void Number123Has444AsAPalindromeIn1Addition()
+        {
+            var expectedResult = new Palindrome();
+            expectedResult.palindrome = "444";
+            expectedResult.numberOfAdditions = 1;
+            var input = "123";
+            var actualResult = _reverseAndAdd.FindPalindrome(input);
+            Assert.AreEqual(expectedResult.palindrome, actualResult.palindrome);
+            Assert.AreEqual(expectedResult.numberOfAdditions, actualResult.numberOfAdditions);
+        }
+
+        
+        [Test]
+        public void Number195Has9339AsAPalindromeIn4Additions()
+        {
+            var expectedResult = new Palindrome();
+            expectedResult.palindrome = "9339";
+            expectedResult.numberOfAdditions = 4;
+            var input = "195";
+            var actualResult = _reverseAndAdd.FindPalindrome(input);
+            Assert.AreEqual(expectedResult.palindrome, actualResult.palindrome);
+            Assert.AreEqual(expectedResult.numberOfAdditions, actualResult.numberOfAdditions);
+        }
+        
     }
 
     
