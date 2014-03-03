@@ -68,5 +68,10 @@ namespace ReverseAndAdd
 
             return result;
         }
+
+        public void PrintPalindrome(Palindrome palindrome)
+        {
+            Console.WriteLine(palindrome.numberOfAdditions + " " + palindrome.palindrome);
+        }
     }
 }
