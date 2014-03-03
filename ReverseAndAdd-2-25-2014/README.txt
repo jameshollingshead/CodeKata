@@ -1,5 +1,3 @@
-I'm doing this as a TDD exercise, so I'm not going to bother making a Main()
-
 - The full text of the exercise is below - 
 
 Reverse and Add (from https://www.codeeval.com/public_sc/45/)
