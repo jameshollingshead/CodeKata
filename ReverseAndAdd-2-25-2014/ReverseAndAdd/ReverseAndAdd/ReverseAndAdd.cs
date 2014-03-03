@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 
-
+[assembly: InternalsVisibleTo("ReverseAndAdd.UnitTests")]
 namespace ReverseAndAdd
 {
     public class ReverseAndAdd
     {
-        public string ReverseString(string input)
+        internal string ReverseString(string input)
         {
             string forward = input;
             char[] charArray = forward.ToCharArray();
@@ -20,7 +21,7 @@ namespace ReverseAndAdd
             return backward;
         }
 
-        public string AddTwoNumberStrings(string forward, string backward)
+        internal string AddTwoNumberStrings(string forward, string backward)
         {
             long forwardAsLong = Convert.ToInt64(forward);
             long backwardAsLong = Convert.ToInt64(backward);
