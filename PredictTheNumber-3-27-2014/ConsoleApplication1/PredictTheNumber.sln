@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PredictTheNumber.Code", "ConsoleApplication1\PredictTheNumber.Code.csproj", "{5E3A4D68-68FF-4AFA-A572-3045D67ACEDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PredictTheNumber.Tests", "PredictTheNumber.Tests\PredictTheNumber.Tests.csproj", "{6C853026-25D0-4C33-9221-93E27D13DD08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E3A4D68-68FF-4AFA-A572-3045D67ACEDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E3A4D68-68FF-4AFA-A572-3045D67ACEDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E3A4D68-68FF-4AFA-A572-3045D67ACEDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E3A4D68-68FF-4AFA-A572-3045D67ACEDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C853026-25D0-4C33-9221-93E27D13DD08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C853026-25D0-4C33-9221-93E27D13DD08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C853026-25D0-4C33-9221-93E27D13DD08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C853026-25D0-4C33-9221-93E27D13DD08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
