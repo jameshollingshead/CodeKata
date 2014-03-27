@@ -10,7 +10,7 @@ namespace PredictTheNumber
 {
     public class PredictTheNumber
     {
-        internal long DetermineNeededStringLength(int targetPosition)
+        internal long DetermineNeededStringLength(long targetPosition)
         {
             long result;
             int powerOfTwo;
@@ -27,6 +27,30 @@ namespace PredictTheNumber
 
                 powerOfTwo = (int)Math.Ceiling(Math.Log(targetPosition, 2));
                 result = (long)Math.Pow(2, powerOfTwo);
+            }
+
+            return result;
+        }
+
+
+
+        internal long NumberOfTransformations(long targetPosition, long stringLength)
+        {
+            long result;
+            long halfStringLength = stringLength/2;
+
+            if(targetPosition == 0)
+            {
+                result = 0;
+            }
+            else if(targetPosition <= halfStringLength)
+            {
+                result = NumberOfTransformations(halfStringLength, targetPosition - halfStringLength);
+            }
+            else
+            {
+                result = NumberOfTransformations(halfStringLength, targetPosition - halfStringLength);
+                result++;
             }
 
             return result;
