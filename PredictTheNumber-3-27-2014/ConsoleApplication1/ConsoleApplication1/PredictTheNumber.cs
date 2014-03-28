@@ -38,18 +38,19 @@ namespace PredictTheNumber
         {
             long result;
             long halfStringLength = stringLength/2;
-            long newTarget = targetPosition - halfStringLength;
-            
-            if(targetPosition <= 0)
+            long newTarget;
+
+            if (targetPosition <= 0)
             {
                 result = 0;
             }
-            else if(targetPosition + 1 < halfStringLength)
+            else if (targetPosition < halfStringLength)
             {
-                result = NumberOfTransformations(newTarget, halfStringLength);
+                result = NumberOfTransformations(targetPosition, halfStringLength);
             }
             else
             {
+                newTarget = targetPosition - halfStringLength;
                 result = NumberOfTransformations(newTarget, halfStringLength);
                 result++;
             }
