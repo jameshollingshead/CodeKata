@@ -42,14 +42,20 @@ namespace PredictTheNumber
 
             if (targetPosition <= 0)
             {
+                //Position 0 is the origin position. No new transformations will ever take place after this point.
                 result = 0;
             }
             else if (targetPosition < halfStringLength)
             {
+                //If the number is in the first half of the string, it will be identical
+                //to the string from the transformation below it, so there is no
+                //transformation to add to the total 
+                //(ie position 2 on a string length of 8 will be exactly the same as position 2 on a string length of 4)
                 result = NumberOfTransformations(targetPosition, halfStringLength);
             }
             else
             {
+                //example - position 6 on a string of length 8 is one transformation away from position 2 on a string of length 4
                 newTarget = targetPosition - halfStringLength;
                 result = NumberOfTransformations(newTarget, halfStringLength);
                 result++;
