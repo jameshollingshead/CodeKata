@@ -58,12 +58,43 @@ namespace PredictTheNumber
             return result;
         }
 
-        internal int DigitAfterTransform(int numberOfTransformations)
+        internal long DigitAfterTransform(long numberOfTransformations)
         {
-            int result;
+            long result;
 
             result = numberOfTransformations % 3;
 
+            return result;
+        }
+
+        internal string[] GetFileContents(string fileName)
+        {
+            string[] result;
+
+            result = System.IO.File.ReadAllLines(fileName);
+
+            return result;
+        }
+
+        internal long ConvertStringBasedNumberToLong(string input)
+        {
+            long result;
+
+            result = Convert.ToInt64(input);
+
+            return result;
+        }
+
+        internal long ValueOfDigitAtSpecifiedLocation(long targetPosition)
+        {
+            long result;
+            long lengthOfStringNeeded;
+            long numberOfTransformationsNeeded;
+            
+            lengthOfStringNeeded = DetermineNeededStringLength(targetPosition);
+            numberOfTransformationsNeeded = NumberOfTransformations(targetPosition, lengthOfStringNeeded);
+            result = DigitAfterTransform(numberOfTransformationsNeeded);
+            
             return result;
         }
     }
