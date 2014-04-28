@@ -30,25 +30,27 @@ namespace PredictTheNumber
         internal string PerformTransformOnNumberString(string input)
         {
             string result = input;
+            string tmpLastHalf;
 
-            for (int i = 0; i < input.Length; i++)
-            {
-                if(input[i] == '0')
-                {
-                    result += "1";
-                }
-                if (input[i] == '1')
-                {
-                    result += "2";
-                }
-                if (input[i] == '2')
-                {
-                    result += "0";
-                }
+            tmpLastHalf = input;
+            tmpLastHalf = tmpLastHalf.Replace('0', 'B');
+            tmpLastHalf = tmpLastHalf.Replace('1', 'C');
+            tmpLastHalf = tmpLastHalf.Replace('2', 'A');
+            tmpLastHalf = tmpLastHalf.Replace('A', '0');
+            tmpLastHalf = tmpLastHalf.Replace('B', '1');
+            tmpLastHalf = tmpLastHalf.Replace('C', '2');
 
-            }
+            result += tmpLastHalf;
+            return result;
+        }
 
-                return result;
+        internal char GetTargetNumberInString(string numberString, int targetPosition)
+        {
+            char result;
+
+            result = numberString[targetPosition];
+
+            return result;
         }
     }
 }

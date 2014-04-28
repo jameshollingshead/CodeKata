@@ -88,5 +88,40 @@ namespace PredictTheNumber.Tests
 
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+        [Test]
+        public void Position0Is0()
+        {
+            int targetPosition = 0;
+            string numberString = "0";
+            char expectedResult = '0';
+            char actualResult = predictTheNumber.GetTargetNumberInString(numberString, targetPosition);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void Position1Is1()
+        {
+            int targetPosition = 1;
+            string numberString = "01";
+            char expectedResult = '1';
+            char actualResult = predictTheNumber.GetTargetNumberInString(numberString, targetPosition);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void Position31Is2()
+        {
+            int targetPosition = 31;
+            string numberString = predictTheNumber.GetCompletedNumberString(targetPosition);
+            char expectedResult = '2';
+            char actualResult = predictTheNumber.GetTargetNumberInString(numberString, targetPosition);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+                
     }
 }
