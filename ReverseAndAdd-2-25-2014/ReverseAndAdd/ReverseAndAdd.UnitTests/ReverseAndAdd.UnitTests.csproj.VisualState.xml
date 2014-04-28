@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1000]C:\Code\Github\C_Sharp\CodeKata\ReverseAndAdd-2-25-2014\ReverseAndAdd\ReverseAndAdd.UnitTests\ReverseAndAdd.UnitTests.csproj</TopNode>
+  <SelectedNode>[0-1000]C:\Code\Github\C_Sharp\CodeKata\ReverseAndAdd-2-25-2014\ReverseAndAdd\ReverseAndAdd.UnitTests\ReverseAndAdd.UnitTests.csproj</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1000]C:\Code\Github\C_Sharp\CodeKata\ReverseAndAdd-2-25-2014\ReverseAndAdd\ReverseAndAdd.UnitTests\ReverseAndAdd.UnitTests.csproj" Expanded="true" />
+    <Node UniqueName="[0-1016]C:\Code\Github\C_Sharp\CodeKata\ReverseAndAdd-2-25-2014\ReverseAndAdd\ReverseAndAdd.UnitTests\bin\Debug\ReverseAndAdd.UnitTests.dll" Expanded="true" />
+    <Node UniqueName="[0-1017]ReverseAndAdd" Expanded="true" />
+    <Node UniqueName="[0-1018]ReverseAndAdd.UnitTests" Expanded="true" />
+    <Node UniqueName="[0-1001]ReverseAndAdd.UnitTests.ReverseAndAddTest" Expanded="true" />
+  </Nodes>
+</VisualState>

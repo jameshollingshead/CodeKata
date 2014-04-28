@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Code\Github\C_Sharp\CodeKata\PredictTheNumber-3-27-2014\ConsoleApplication1\ConsoleApplication1\PredictTheNumber.Code.csproj" total="0" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-03-27" time="15:13:28">
+  <environment nunit-version="2.6.2.12296" clr-version="2.0.50727.5477" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Code\Github\C_Sharp\CodeKata\PredictTheNumber-3-27-2014\ConsoleApplication1\ConsoleApplication1" machine-name="ELDERWYRM" user="James" user-domain="ElderWyrm" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Project" name="C:\Code\Github\C_Sharp\CodeKata\PredictTheNumber-3-27-2014\ConsoleApplication1\ConsoleApplication1\PredictTheNumber.Code.csproj" executed="True" result="Inconclusive" success="False" time="0.013" asserts="0">
+    <results>
+      <test-suite type="Assembly" name="C:\Code\Github\C_Sharp\CodeKata\PredictTheNumber-3-27-2014\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe" executed="True" result="Inconclusive" success="False" time="0.002" asserts="0" />
+    </results>
+  </test-suite>
+</test-results>

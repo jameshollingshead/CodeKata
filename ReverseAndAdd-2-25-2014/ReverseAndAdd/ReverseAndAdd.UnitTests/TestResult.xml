@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Code\Github\C_Sharp\CodeKata\ReverseAndAdd-2-25-2014\ReverseAndAdd\ReverseAndAdd.UnitTests\ReverseAndAdd.UnitTests.csproj" total="14" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-03-03" time="15:31:29">
+  <environment nunit-version="2.6.2.12296" clr-version="2.0.50727.5477" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Code\Github\C_Sharp\CodeKata\ReverseAndAdd-2-25-2014\ReverseAndAdd\ReverseAndAdd.UnitTests" machine-name="ELDERWYRM" user="James" user-domain="ElderWyrm" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Project" name="C:\Code\Github\C_Sharp\CodeKata\ReverseAndAdd-2-25-2014\ReverseAndAdd\ReverseAndAdd.UnitTests\ReverseAndAdd.UnitTests.csproj" executed="True" result="Success" success="True" time="0.152" asserts="0">
+    <results>
+      <test-suite type="Assembly" name="C:\Code\Github\C_Sharp\CodeKata\ReverseAndAdd-2-25-2014\ReverseAndAdd\ReverseAndAdd.UnitTests\bin\Debug\ReverseAndAdd.UnitTests.dll" executed="True" result="Success" success="True" time="0.143" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="ReverseAndAdd" executed="True" result="Success" success="True" time="0.142" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="UnitTests" executed="True" result="Success" success="True" time="0.142" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="ReverseAndAddTest" executed="True" result="Success" success="True" time="0.141" asserts="0">
+                    <results>
+                      <test-case name="ReverseAndAdd.UnitTests.ReverseAndAddTest.Adding123And321Gives444" executed="True" result="Success" success="True" time="0.065" asserts="1" />
+                      <test-case name="ReverseAndAdd.UnitTests.ReverseAndAddTest.Adding777and345Gives1122" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="ReverseAndAdd.UnitTests.ReverseAndAddTest.Number11IsAPalindrome" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                      <test-case name="ReverseAndAdd.UnitTests.ReverseAndAddTest.Number121IsAPalindrome" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="ReverseAndAdd.UnitTests.ReverseAndAddTest.Number1221IsAPalindrome" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="ReverseAndAdd.UnitTests.ReverseAndAddTest.Number1234IsNotAPalindrome" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="ReverseAndAdd.UnitTests.ReverseAndAddTest.Number123Has444AsAPalindromeIn1Addition" executed="True" result="Success" success="True" time="0.003" asserts="2" />
+                      <test-case name="ReverseAndAdd.UnitTests.ReverseAndAddTest.Number134IsNotAPalindrome" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="ReverseAndAdd.UnitTests.ReverseAndAddTest.Number14IsNotAPalindrome" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="ReverseAndAdd.UnitTests.ReverseAndAddTest.Number195Has9339AsAPalindromeIn4Additions" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                      <test-case name="ReverseAndAdd.UnitTests.ReverseAndAddTest.Number1IsAPalindrome" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="ReverseAndAdd.UnitTests.ReverseAndAddTest.ReadFromFileShouldGive123_111_195" executed="True" result="Success" success="True" time="0.002" asserts="3" />
+                      <test-case name="ReverseAndAdd.UnitTests.ReverseAndAddTest.Reverse123Gives321" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="ReverseAndAdd.UnitTests.ReverseAndAddTest.Reverse957Gives759" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
