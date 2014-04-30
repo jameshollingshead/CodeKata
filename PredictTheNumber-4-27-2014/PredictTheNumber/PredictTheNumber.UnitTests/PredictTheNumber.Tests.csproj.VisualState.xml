@@ -5,9 +5,10 @@
   <ExcludeCategories>false</ExcludeCategories>
   <Nodes>
     <Node UniqueName="[0-1000]C:\Code\Github\C_Sharp\CodeKata\PredictTheNumber-4-27-2014\PredictTheNumber\PredictTheNumber.UnitTests\PredictTheNumber.Tests.csproj" Expanded="true" />
-    <Node UniqueName="[0-1012]C:\Code\Github\C_Sharp\CodeKata\PredictTheNumber-4-27-2014\PredictTheNumber\PredictTheNumber.UnitTests\bin\Debug\PredictTheNumber.UnitTests.dll" Expanded="true" />
-    <Node UniqueName="[0-1013]PredictTheNumber" Expanded="true" />
-    <Node UniqueName="[0-1014]PredictTheNumber.Tests" Expanded="true" />
-    <Node UniqueName="[0-1001]PredictTheNumber.Tests.UnitTests" Expanded="true" />
+    <Node UniqueName="[0-1014]C:\Code\Github\C_Sharp\CodeKata\PredictTheNumber-4-27-2014\PredictTheNumber\PredictTheNumber.UnitTests\bin\Debug\PredictTheNumber.UnitTests.dll" Expanded="true" />
+    <Node UniqueName="[0-1015]PredictTheNumber" Expanded="true" />
+    <Node UniqueName="[0-1016]PredictTheNumber.UnitTests" Expanded="true" />
+    <Node UniqueName="[0-1001]PredictTheNumber.UnitTests.Benchmarks" Expanded="true" />
+    <Node UniqueName="[0-1003]PredictTheNumber.UnitTests.UnitTests" Expanded="true" />
   </Nodes>
 </VisualState>

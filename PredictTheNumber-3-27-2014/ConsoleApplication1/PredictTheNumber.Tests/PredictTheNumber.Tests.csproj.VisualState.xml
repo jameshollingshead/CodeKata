@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
   <TopNode>[0-1000]C:\Code\Github\C_Sharp\CodeKata\PredictTheNumber-3-27-2014\ConsoleApplication1\PredictTheNumber.Tests\PredictTheNumber.Tests.csproj</TopNode>
-  <SelectedNode>[0-1012]PredictTheNumber.Tests.IntegrationTests.Position10is2</SelectedNode>
+  <SelectedNode>[0-1001]PredictTheNumber.Tests.Benchmarks</SelectedNode>
   <ExcludeCategories>false</ExcludeCategories>
   <Nodes>
     <Node UniqueName="[0-1000]C:\Code\Github\C_Sharp\CodeKata\PredictTheNumber-3-27-2014\ConsoleApplication1\PredictTheNumber.Tests\PredictTheNumber.Tests.csproj" Expanded="true" />
-    <Node UniqueName="[0-1059]C:\Code\Github\C_Sharp\CodeKata\PredictTheNumber-3-27-2014\ConsoleApplication1\PredictTheNumber.Tests\bin\Debug\PredictTheNumber.Tests.dll" Expanded="true" />
-    <Node UniqueName="[0-1060]PredictTheNumber" Expanded="true" />
-    <Node UniqueName="[0-1061]PredictTheNumber.Tests" Expanded="true" />
-    <Node UniqueName="[0-1001]PredictTheNumber.Tests.IntegrationTests" Expanded="true" />
+    <Node UniqueName="[0-1060]C:\Code\Github\C_Sharp\CodeKata\PredictTheNumber-3-27-2014\ConsoleApplication1\PredictTheNumber.Tests\bin\Debug\PredictTheNumber.Tests.dll" Expanded="true" />
+    <Node UniqueName="[0-1061]PredictTheNumber" Expanded="true" />
+    <Node UniqueName="[0-1062]PredictTheNumber.Tests" Expanded="true" />
+    <Node UniqueName="[0-1001]PredictTheNumber.Tests.Benchmarks" Expanded="true" />
   </Nodes>
 </VisualState>

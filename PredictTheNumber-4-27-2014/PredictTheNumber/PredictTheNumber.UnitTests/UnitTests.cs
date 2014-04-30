@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using PredictTheNumber;
 
-namespace PredictTheNumber.Tests
+namespace PredictTheNumber.UnitTests
 {
     [TestFixture]
     public class UnitTests
