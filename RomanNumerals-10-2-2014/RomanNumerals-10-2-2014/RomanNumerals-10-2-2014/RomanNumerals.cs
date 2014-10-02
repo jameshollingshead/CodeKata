@@ -38,5 +38,23 @@ namespace RomanNumerals_10_2_2014
             return result;
             
         }
+
+        public int ConvertRomanNumeralsToArabic(string input)
+        {
+            int result = 0;
+            char[] romanNumerals = { 'I' };
+            int[] arabicNumber = { 1 };
+
+            for(int i = 0; i< input.Length; i++)
+            {
+                for (int j = 0; j < romanNumerals.Length; j++ )
+                    if (input[i] == romanNumerals[j])
+                        result += arabicNumber[j];
+            }
+
+            return result;
+
+
+        }
     }
 }
