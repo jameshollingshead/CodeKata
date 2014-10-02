@@ -11,23 +11,48 @@ namespace RomanNumerals_10_2_2014
         public string ConvertArabicToRomanNumerals(int input)
         {
             string result = string.Empty;
+            int numberToConvert = input;
 
-            for (int i = input; i > 0; )
+            //This is basicall a sieve, taking the largest possible numeral on each pass.
+            //It's not the most efficent way to do this, but given the small problem size
+            //it would take more effort to be elegant than the returns would justify.
+
+            while (numberToConvert > 0)
             {
-                if(i >= 5)
+                if (numberToConvert >= 50)
+                {
+                    result += "L";
+                    numberToConvert -= 50;
+                }
+                else if (numberToConvert >= 40)
+                {
+                    result += "XL";
+                    numberToConvert -= 40;
+                }
+                else if (numberToConvert >= 10)
+                {
+                    result += "X";
+                    numberToConvert -= 10;
+                }
+                else if(numberToConvert >= 9)
+                {
+                    result += "IX";
+                    numberToConvert -= 9;
+                }
+                else if(numberToConvert >= 5)
                 {
                     result += "V";
-                    i -= 5;
+                    numberToConvert -= 5;
                 }
-                else if(i >= 4)
+                else if(numberToConvert >= 4)
                 {
                     result += "IV";
-                    i -= 4;
+                    numberToConvert -= 4;
                 }
-                else if (i >= 1)
+                else
                 {
                     result += "I";
-                    i -= 1;
+                    numberToConvert -= 1;
                 }
             }
 
