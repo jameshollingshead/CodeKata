@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RomanNumerals_10_2_2014
 {
-    public class Class1
+    public class RomanNumerals
     {
     }
 }
