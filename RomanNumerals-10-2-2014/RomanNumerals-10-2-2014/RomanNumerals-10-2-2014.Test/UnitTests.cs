@@ -210,5 +210,101 @@ namespace RomanNumerals_10_2_2014.Test
 
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+        [Test]
+        public void ArabicNumber90GivesRomanNumeralXC()
+        {
+            int input = 90;
+            string expectedResult = "XC";
+            string actualResult;
+
+            actualResult = romanNumerals.ConvertArabicToRomanNumerals(input);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void ArabicNumber100GivesRomanNumeralC()
+        {
+            int input = 100;
+            string expectedResult = "C";
+            string actualResult;
+
+            actualResult = romanNumerals.ConvertArabicToRomanNumerals(input);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void ArabicNumber400GivesRomanNumeralCD()
+        {
+            int input = 400;
+            string expectedResult = "CD";
+            string actualResult;
+
+            actualResult = romanNumerals.ConvertArabicToRomanNumerals(input);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void ArabicNumber500GivesRomanNumeralD()
+        {
+            int input = 500;
+            string expectedResult = "D";
+            string actualResult;
+
+            actualResult = romanNumerals.ConvertArabicToRomanNumerals(input);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void ArabicNumber900GivesRomanNumeralCM()
+        {
+            int input = 900;
+            string expectedResult = "CM";
+            string actualResult;
+
+            actualResult = romanNumerals.ConvertArabicToRomanNumerals(input);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void ArabicNumber1000GivesRomanNumeralM()
+        {
+            int input = 1000;
+            string expectedResult = "M";
+            string actualResult;
+
+            actualResult = romanNumerals.ConvertArabicToRomanNumerals(input);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void ArabicNumber2473GivesRomanNumeralMMCDLXXIII()
+        {
+            int input = 2473;
+            string expectedResult = "MMCDLXXIII";
+            string actualResult;
+
+            actualResult = romanNumerals.ConvertArabicToRomanNumerals(input);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void ArabicNumber3000GivesRomanNumeralMMM()
+        {
+            int input = 3000;
+            string expectedResult = "MMM";
+            string actualResult;
+
+            actualResult = romanNumerals.ConvertArabicToRomanNumerals(input);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
     }
 }
