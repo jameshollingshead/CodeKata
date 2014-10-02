@@ -343,5 +343,52 @@ namespace RomanNumerals_10_2_2014.Test
             Assert.AreEqual(expectedResult, actualResult);
         }
 
+        [Test]
+        public void RomanNumeralIVGivesArabicNumber4()
+        {
+            string input = "IV";
+            int expectedResult = 4;
+            int actualResult;
+
+            actualResult = romanNumerals.ConvertRomanNumeralsToArabic(input);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void RomanNumeralVGivesArabicNumber5()
+        {
+            string input = "V";
+            int expectedResult = 5;
+            int actualResult;
+
+            actualResult = romanNumerals.ConvertRomanNumeralsToArabic(input);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void RomanNumeralVIGivesArabicNumber6()
+        {
+            string input = "VI";
+            int expectedResult = 6;
+            int actualResult;
+
+            actualResult = romanNumerals.ConvertRomanNumeralsToArabic(input);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void RomanNumeralIXIGivesArabicNumber9()
+        {
+            string input = "IX";
+            int expectedResult = 9;
+            int actualResult;
+
+            actualResult = romanNumerals.ConvertRomanNumeralsToArabic(input);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
     }
 }

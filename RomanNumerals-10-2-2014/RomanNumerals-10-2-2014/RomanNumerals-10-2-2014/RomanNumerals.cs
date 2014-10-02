@@ -39,22 +39,58 @@ namespace RomanNumerals_10_2_2014
             
         }
 
+
         public int ConvertRomanNumeralsToArabic(string input)
         {
             int result = 0;
-            char[] romanNumerals = { 'I' };
-            int[] arabicNumber = { 1 };
+            
+            int currentArabicNumber, nextArabicNumber;
+            char currentRomanNumeral, nextRomanNumeral;
 
             for(int i = 0; i< input.Length; i++)
             {
-                for (int j = 0; j < romanNumerals.Length; j++ )
-                    if (input[i] == romanNumerals[j])
-                        result += arabicNumber[j];
+                    if(i+1 < input.Length)
+                    {
+                        currentRomanNumeral = input[i];
+                        nextRomanNumeral = input[i + 1];
+                        currentArabicNumber = ConvertSingleRomanDigitToArabicNumber(currentRomanNumeral);
+                        nextArabicNumber = ConvertSingleRomanDigitToArabicNumber(nextRomanNumeral);
+
+                        if (currentArabicNumber < nextArabicNumber)
+                        {
+                            result += (nextArabicNumber - currentArabicNumber);
+                            i++;
+                        }
+                        else
+                        {
+                            result += currentArabicNumber;
+                        }
+                    }
+                    else
+                    {
+                        currentArabicNumber = ConvertSingleRomanDigitToArabicNumber(input[i]);
+                        result += currentArabicNumber;
+                    }
             }
 
             return result;
+        }
 
 
+        private int ConvertSingleRomanDigitToArabicNumber(char input)
+        {
+            char[] romanNumerals = { 'X', 'V', 'I' };
+            int[] arabicNumber = { 10, 5, 1 };
+            
+            for(int i = 0; i<romanNumerals.Length; i++)
+            {
+                if(input == romanNumerals[i])
+                { 
+                    return arabicNumber[i];
+                }
+            }
+
+            return 0;
         }
     }
 }
