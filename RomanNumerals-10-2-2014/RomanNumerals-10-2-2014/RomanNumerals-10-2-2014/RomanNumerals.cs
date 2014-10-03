@@ -79,8 +79,8 @@ namespace RomanNumerals_10_2_2014
 
         private int ConvertSingleRomanDigitToArabicNumber(char input)
         {
-            char[] romanNumerals = { 'D', 'C', 'L', 'X', 'V', 'I' };
-            int[] arabicNumber = { 500, 100, 50, 10, 5, 1 };
+            char[] romanNumerals = { 'M', 'D', 'C', 'L', 'X', 'V', 'I' };
+            int[] arabicNumber = { 1000, 500, 100, 50, 10, 5, 1 };
             
             for(int i = 0; i<romanNumerals.Length; i++)
             {

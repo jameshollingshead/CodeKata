@@ -510,5 +510,53 @@ namespace RomanNumerals_10_2_2014.Test
 
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+        [Test]
+        public void RomanNumeralCMGivesArabicNumber900()
+        {
+            string input = "CM";
+            int expectedResult = 900;
+            int actualResult;
+
+            actualResult = romanNumerals.ConvertRomanNumeralsToArabic(input);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void RomanNumeralMGivesArabicNumber1000()
+        {
+            string input = "M";
+            int expectedResult = 1000;
+            int actualResult;
+
+            actualResult = romanNumerals.ConvertRomanNumeralsToArabic(input);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void RomanNumeralMMCDLXXIIIGivesArabicNumber2473()
+        {
+            string input = "MMCDLXXIII";
+            int expectedResult = 2473;
+            int actualResult;
+
+            actualResult = romanNumerals.ConvertRomanNumeralsToArabic(input);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void RomanNumeralMMMGivesArabicNumber3000()
+        {
+            string input = "MMM";
+            int expectedResult = 3000;
+            int actualResult;
+
+            actualResult = romanNumerals.ConvertRomanNumeralsToArabic(input);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
     }
 }
