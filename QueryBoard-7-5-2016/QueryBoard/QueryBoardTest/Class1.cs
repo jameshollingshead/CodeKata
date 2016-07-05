@@ -87,7 +87,7 @@ namespace QueryBoard.Test
         }
 
         [Test]
-        public void SettingRow2To2AndColumn2To1ThenCallingGetSumOfRowOnRow2ShouldReturn257()
+        public void SettingRow2To1AndColumn2To2ThenCallingGetSumOfRowOnRow2ShouldReturn257()
         {
             var expectedResult = 257;
             queryBoard.SetRow(2, 1);
