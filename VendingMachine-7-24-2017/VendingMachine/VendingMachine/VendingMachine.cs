@@ -18,13 +18,40 @@ namespace VendingMachines
             }
             else
             {
-                return "$0.10";
+                return ConvertMoneyToString();
             }
+        }
+
+        private string ConvertMoneyToString()
+        {
+            return "$" + string.Format("{0:0.00}", total);
         }
 
         public void InsertCoin(string coin)
         {
-            total = 0.10;
+            total = GetCoinValue(coin);
+        }
+
+        private double GetCoinValue(string coin)
+        {
+            double result;
+            switch (coin.ToLower())
+            {
+                case "dime":
+                    result = 0.10;
+                    break;
+                case "nickel":
+                    result = 0.05;
+                    break;
+                case "quarter":
+                    result = 0.25;
+                    break;
+                default:
+                    result = 0.00;
+                    break;
+            }
+            return result;
+
         }
     }
 }

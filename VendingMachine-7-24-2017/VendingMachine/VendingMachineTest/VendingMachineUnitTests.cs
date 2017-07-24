@@ -14,7 +14,10 @@ namespace VendingMachineTest
     {
         public VendingMachine VendingMachine;
         public const string InsertCoin = "Insert Coin";
-        public const string DimeInserted = "$0.10";
+        public const string Penny = "Penny";
+        public const string Nickel = "Nickel";
+        public const string Dime = "Dime";
+        public const string Quarter = "Quarter";
 
         [SetUp]
         public void TestSetup()
@@ -30,11 +33,35 @@ namespace VendingMachineTest
         }
 
         [Test]
-        public void WhenADimeIsInsertedTheDisplayWillSayThereAre10Cents()
+        public void WhenADimeIsInsertedTheDisplayWillRead10Cents()
         {
-            VendingMachine.InsertCoin("Dime");
+            VendingMachine.InsertCoin(Dime);
             var result = VendingMachine.GetDisplay();
-            Assert.AreEqual(DimeInserted, result);
+            Assert.AreEqual("$0.10", result);
+        }
+
+        [Test]
+        public void WhenANickelIsInsertedDisplayWillRead5Cents()
+        {
+            VendingMachine.InsertCoin(Nickel);
+            var result = VendingMachine.GetDisplay();
+            Assert.AreEqual("$0.05", result);
+        }
+
+        [Test]
+        public void WhenAQuarterIsInsertedDisplayWillRead25Cents()
+        {
+            VendingMachine.InsertCoin(Quarter);
+            var result = VendingMachine.GetDisplay();
+            Assert.AreEqual("$0.25", result);
+        }
+
+        [Test]
+        public void WhenAPennyIsInsertedDisplayWillReadInsertCoin()
+        {
+            VendingMachine.InsertCoin(Penny);
+            var result = VendingMachine.GetDisplay();
+            Assert.AreEqual(InsertCoin, result);
         }
 
         
