@@ -99,8 +99,21 @@ namespace VendingMachineTest
             Assert.AreEqual("$0.35", result);
         }
 
+        [Test]
+        public void WhenTheColaButtonIsPressedWithoutMoneyInsertedThePriceOfTheColaWillBeDisplayed()
+        {
+            VendingMachine.OrderCola();
+            var result = VendingMachine.GetDisplay();
+            Assert.AreEqual("PRICE $1.00", result);
+        }
 
-
-
+        [Test]
+        public void WhenTheColaButtonIsPressedWithoutMoneyAndDisplayIsCheckTwiceInsertedInsertCoinWillBeDisplayed()
+        {
+            VendingMachine.OrderCola();
+            var result = VendingMachine.GetDisplay();
+            result = VendingMachine.GetDisplay();
+            Assert.AreEqual(InsertCoin, result);
+        }
     }
 }

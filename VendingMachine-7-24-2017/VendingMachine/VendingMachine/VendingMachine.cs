@@ -10,10 +10,37 @@ namespace VendingMachines
     {
         private double insertedCoins = 0.0;
         private double returnedCoins = 0.0;
+        private string priceMessage = string.Empty;
+        private bool hasDisplayBeenChecked = false;
+        private readonly CoinBox _coinBox = new CoinBox();
+
+        public VendingMachine()
+        {
+            
+        }
 
         public String GetDisplay()
         {
-            return insertedCoins == 0 ? "Insert Coin" : ConvertMoneyToString();
+            if (hasDisplayBeenChecked)
+            {
+                ToggleHasDisplayBeenChecked();
+                if (insertedCoins == 0) return "Insert Coin";
+                else return ConvertMoneyToString();
+            }
+            else
+            {
+                ToggleHasDisplayBeenChecked();
+                if (priceMessage != string.Empty)
+                    return priceMessage;
+                if (insertedCoins == 0) return "Insert Coin";
+                else return ConvertMoneyToString();
+            }
+            
+        }
+
+        private void ToggleHasDisplayBeenChecked()
+        {
+            hasDisplayBeenChecked = !hasDisplayBeenChecked;
         }
 
         private string ConvertMoneyToString()
@@ -23,67 +50,20 @@ namespace VendingMachines
 
         public void InsertCoin(string coin)
         {
-            if(IsValidCoin(coin))
-                AddCoinToInsertedCoins(coin);
+            if(_coinBox.IsValidCoin(coin))
+                insertedCoins = _coinBox.AddCoinToInsertedCoins(coin, insertedCoins);
             else
-                AddCoinToReturnedCoins(coin);
-        }
-
-        private void AddCoinToReturnedCoins(string coin)
-        {
-            returnedCoins += GetCoinValue(coin);
-        }
-
-        private void AddCoinToInsertedCoins(string coin)
-        {
-            insertedCoins += GetCoinValue(coin);
-        }
-
-        private bool IsValidCoin(string coin)
-        {
-            var validCoins = new List<string> {"nickel", "dime", "quarter"};
-            return validCoins.Contains(coin.ToLower());
-        }
-
-        private double GetCoinValue(string coin)
-        {
-            double result = 0.00;
-
-            if (IsNickel(coin))
-                result = 0.05;
-            if (IsDime(coin))
-                result = 0.10;
-            if (IsQuarter(coin))
-                result = 0.25;
-            if (IsPenny(coin))
-                result = 0.01;
-
-            return result;
-        }
-
-        private bool IsPenny(string coin)
-        {
-            return coin.ToLower() == "penny";
-        }
-
-        private bool IsQuarter(string coin)
-        {
-            return coin.ToLower() == "quarter";
-        }
-
-        private bool IsDime(string coin)
-        {
-            return coin.ToLower() == "dime";
-        }
-
-        private bool IsNickel(string coin)
-        {
-            return coin.ToLower() == "nickel";
+                returnedCoins = _coinBox.AddCoinToReturnedCoins(coin, returnedCoins);
         }
 
         public double GetReturnedCoins()
         {
             return returnedCoins;
+        }
+
+        public void OrderCola()
+        {
+            priceMessage = "PRICE $1.00";
         }
     }
 }
