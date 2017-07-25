@@ -16,18 +16,19 @@ namespace VendingMachines
 
         public String GetDisplay()
         {
+            string result;
+
             if (_hasDisplayBeenChecked)
             {
                 ToggleHasDisplayBeenChecked();
-                return GetTotalInsertedCoins();
+                result = GetTotalInsertedCoins();
             }
             else
             {
                 ToggleHasDisplayBeenChecked();
-                if (IsThereAPriceToDisplay())
-                    return GetPriceMessage();
-                return GetTotalInsertedCoins();
+                result = IsThereAPriceToDisplay() ? GetPriceMessage() : GetTotalInsertedCoins();
             }
+            return result;
         }
 
         private string GetPriceMessage()
