@@ -42,8 +42,12 @@ namespace VendingMachines
 
         private string GetTotalInsertedCoins()
         {
-            if (_insertedCoins == 0) return "Insert Coin";
-            else return ConvertMoneyToString();
+            return AreCoinsAreInserted() ? ConvertMoneyToString() : "Insert Coin";
+        }
+
+        private bool AreCoinsAreInserted()
+        {
+            return _insertedCoins > 0;
         }
 
         private void ToggleHasDisplayBeenChecked()
