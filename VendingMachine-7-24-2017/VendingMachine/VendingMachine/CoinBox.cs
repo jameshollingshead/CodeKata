@@ -10,39 +10,27 @@ namespace VendingMachines
             return validCoins.Contains(coin.ToLower());
         }
 
-        public bool IsPenny(string coin)
+        private bool IsPenny(string coin)
         {
             return coin.ToLower() == "penny";
         }
 
-        public bool IsQuarter(string coin)
+        private bool IsQuarter(string coin)
         {
             return coin.ToLower() == "quarter";
         }
 
-        public bool IsDime(string coin)
+        private bool IsDime(string coin)
         {
             return coin.ToLower() == "dime";
         }
 
-        public bool IsNickel(string coin)
+        private bool IsNickel(string coin)
         {
             return coin.ToLower() == "nickel";
         }
-   
 
-  
-        public double AddCoinToReturnedCoins(string coin, double returnedCoins)
-        {
-            return returnedCoins + GetCoinValue(coin);
-        }
-
-        public double AddCoinToInsertedCoins(string coin, double insertedCoins)
-        {
-            return insertedCoins + GetCoinValue(coin);
-        }
-
-        private double GetCoinValue(string coin)
+        public double GetCoinValue(string coin)
         {
             double result = 0.00;
 

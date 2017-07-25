@@ -8,62 +8,80 @@ namespace VendingMachines
 {
     public class VendingMachine
     {
-        private double insertedCoins = 0.0;
-        private double returnedCoins = 0.0;
-        private string priceMessage = string.Empty;
-        private bool hasDisplayBeenChecked = false;
+        private double _insertedCoins = 0.0;
+        private double _returnedCoins = 0.0;
+        private string _priceMessage = string.Empty;
+        private bool _hasDisplayBeenChecked = false;
         private readonly CoinBox _coinBox = new CoinBox();
-
-        public VendingMachine()
-        {
-            
-        }
 
         public String GetDisplay()
         {
-            if (hasDisplayBeenChecked)
+            if (_hasDisplayBeenChecked)
             {
                 ToggleHasDisplayBeenChecked();
-                if (insertedCoins == 0) return "Insert Coin";
-                else return ConvertMoneyToString();
+                return GetTotalInsertedCoins();
             }
             else
             {
                 ToggleHasDisplayBeenChecked();
-                if (priceMessage != string.Empty)
-                    return priceMessage;
-                if (insertedCoins == 0) return "Insert Coin";
-                else return ConvertMoneyToString();
+                if (IsThereAPriceToDisplay())
+                    return GetPriceMessage();
+                return GetTotalInsertedCoins();
             }
-            
+        }
+
+        private string GetPriceMessage()
+        {
+            return _priceMessage;
+        }
+
+        private bool IsThereAPriceToDisplay()
+        {
+            return _priceMessage != string.Empty;
+        }
+
+        private string GetTotalInsertedCoins()
+        {
+            if (_insertedCoins == 0) return "Insert Coin";
+            else return ConvertMoneyToString();
         }
 
         private void ToggleHasDisplayBeenChecked()
         {
-            hasDisplayBeenChecked = !hasDisplayBeenChecked;
+            _hasDisplayBeenChecked = !_hasDisplayBeenChecked;
         }
 
         private string ConvertMoneyToString()
         {
-            return "$" + string.Format("{0:0.00}", insertedCoins);
+            return "$" + string.Format("{0:0.00}", _insertedCoins);
         }
 
         public void InsertCoin(string coin)
         {
             if(_coinBox.IsValidCoin(coin))
-                insertedCoins = _coinBox.AddCoinToInsertedCoins(coin, insertedCoins);
+                AddCoinToInsertedCoins(coin);
             else
-                returnedCoins = _coinBox.AddCoinToReturnedCoins(coin, returnedCoins);
+                AddCoinToReturnedCoins(coin);
+        }
+
+        private void AddCoinToReturnedCoins(string coin)
+        {
+            _returnedCoins += _coinBox.GetCoinValue(coin);
+        }
+
+        private void AddCoinToInsertedCoins(string coin)
+        {
+            _insertedCoins += _coinBox.GetCoinValue(coin);
         }
 
         public double GetReturnedCoins()
         {
-            return returnedCoins;
+            return _returnedCoins;
         }
 
         public void OrderCola()
         {
-            priceMessage = "PRICE $1.00";
+            _priceMessage = "PRICE $1.00";
         }
     }
 }

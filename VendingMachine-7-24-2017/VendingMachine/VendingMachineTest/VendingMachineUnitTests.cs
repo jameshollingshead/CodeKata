@@ -12,12 +12,12 @@ namespace VendingMachineTest
     [TestFixture]
     class VendingMachineUnitTests
     {
-        public VendingMachine VendingMachine;
-        public const string InsertCoin = "Insert Coin";
-        public const string Penny = "Penny";
-        public const string Nickel = "Nickel";
-        public const string Dime = "Dime";
-        public const string Quarter = "Quarter";
+        private VendingMachine VendingMachine;
+        private const string InsertCoin = "Insert Coin";
+        private const string Penny = "Penny";
+        private const string Nickel = "Nickel";
+        private const string Dime = "Dime";
+        private const string Quarter = "Quarter";
 
         [SetUp]
         public void TestSetup()
