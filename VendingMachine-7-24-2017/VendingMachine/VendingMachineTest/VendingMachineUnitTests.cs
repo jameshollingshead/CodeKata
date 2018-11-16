@@ -28,7 +28,7 @@ namespace VendingMachineTest
         [Test]
         public void LookingAtDisplayWithNoCoinsInsertedShouldSayInsertCoin()
         {
-            var result = VendingMachine.GetDisplay();
+            var result = VendingMachine.ViewDisplay();
             Assert.AreEqual(InsertCoin, result);
         }
 
@@ -36,7 +36,7 @@ namespace VendingMachineTest
         public void WhenADimeIsInsertedTheDisplayWillRead10Cents()
         {
             VendingMachine.InsertCoin(Dime);
-            var result = VendingMachine.GetDisplay();
+            var result = VendingMachine.ViewDisplay();
             Assert.AreEqual("$0.10", result);
         }
 
@@ -44,7 +44,7 @@ namespace VendingMachineTest
         public void WhenANickelIsInsertedDisplayWillRead5Cents()
         {
             VendingMachine.InsertCoin(Nickel);
-            var result = VendingMachine.GetDisplay();
+            var result = VendingMachine.ViewDisplay();
             Assert.AreEqual("$0.05", result);
         }
 
@@ -52,7 +52,7 @@ namespace VendingMachineTest
         public void WhenAQuarterIsInsertedDisplayWillRead25Cents()
         {
             VendingMachine.InsertCoin(Quarter);
-            var result = VendingMachine.GetDisplay();
+            var result = VendingMachine.ViewDisplay();
             Assert.AreEqual("$0.25", result);
         }
 
@@ -60,7 +60,7 @@ namespace VendingMachineTest
         public void WhenAPennyIsInsertedDisplayWillReadInsertCoin()
         {
             VendingMachine.InsertCoin(Penny);
-            var result = VendingMachine.GetDisplay();
+            var result = VendingMachine.ViewDisplay();
             Assert.AreEqual(InsertCoin, result);
         }
 
@@ -68,7 +68,7 @@ namespace VendingMachineTest
         public void WhenAPennyIsInsertedCoinReturnWillContain1Cent()
         {
             VendingMachine.InsertCoin(Penny);
-            var result = VendingMachine.GetReturnedCoins();
+            var result = VendingMachine.CheckCoinReturn();
             Assert.AreEqual(0.01, result);
         }
 
@@ -77,7 +77,7 @@ namespace VendingMachineTest
         {
             VendingMachine.InsertCoin(Penny);
             VendingMachine.InsertCoin(Penny);
-            var result = VendingMachine.GetReturnedCoins();
+            var result = VendingMachine.CheckCoinReturn();
             Assert.AreEqual(0.02, result);
         }
 
@@ -86,7 +86,7 @@ namespace VendingMachineTest
         {
             VendingMachine.InsertCoin(Dime);
             VendingMachine.InsertCoin(Nickel);
-            var result = VendingMachine.GetDisplay();
+            var result = VendingMachine.ViewDisplay();
             Assert.AreEqual("$0.15", result);
         }
 
@@ -95,7 +95,7 @@ namespace VendingMachineTest
         {
             VendingMachine.InsertCoin(Dime);
             VendingMachine.InsertCoin(Quarter);
-            var result = VendingMachine.GetDisplay();
+            var result = VendingMachine.ViewDisplay();
             Assert.AreEqual("$0.35", result);
         }
 
@@ -103,7 +103,7 @@ namespace VendingMachineTest
         public void WhenTheColaButtonIsPressedWithoutMoneyInsertedThePriceOfTheColaWillBeDisplayed()
         {
             VendingMachine.OrderCola();
-            var result = VendingMachine.GetDisplay();
+            var result = VendingMachine.ViewDisplay();
             Assert.AreEqual("PRICE $1.00", result);
         }
 
@@ -111,8 +111,8 @@ namespace VendingMachineTest
         public void WhenTheColaButtonIsPressedWithoutMoneyAndDisplayIsCheckTwiceInsertedInsertCoinWillBeDisplayed()
         {
             VendingMachine.OrderCola();
-            var result = VendingMachine.GetDisplay();
-            result = VendingMachine.GetDisplay();
+            var result = VendingMachine.ViewDisplay();
+            result = VendingMachine.ViewDisplay();
             Assert.AreEqual(InsertCoin, result);
         }
     }

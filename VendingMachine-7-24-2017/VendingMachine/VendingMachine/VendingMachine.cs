@@ -14,20 +14,19 @@ namespace VendingMachines
         private bool _hasDisplayBeenChecked = false;
         private readonly CoinBox _coinBox = new CoinBox();
 
-        public String GetDisplay()
+        public String ViewDisplay()
         {
             string result;
 
             if (_hasDisplayBeenChecked)
             {
-                ToggleHasDisplayBeenChecked();
-                result = GetTotalInsertedCoins();
+                result = GetInsertedCoinTotal();
             }
             else
             {
-                ToggleHasDisplayBeenChecked();
-                result = IsThereAPriceToDisplay() ? GetPriceMessage() : GetTotalInsertedCoins();
+                result = IsThereAPriceToDisplay() ? GetPriceMessage() : GetInsertedCoinTotal();
             }
+            ToggleHasDisplayBeenChecked();
             return result;
         }
 
@@ -41,14 +40,14 @@ namespace VendingMachines
             return _priceMessage != string.Empty;
         }
 
-        private string GetTotalInsertedCoins()
+        private string GetInsertedCoinTotal()
         {
-            return AreCoinsAreInserted() ? ConvertMoneyToString() : "Insert Coin";
+            return AreCoinsAreInserted() ? ConvertMoneyToString(_coinBox.InsertedCoins()) : "Insert Coin";
         }
 
         private bool AreCoinsAreInserted()
         {
-            return _insertedCoins > 0;
+            return _coinBox.InsertedCoins() > 0;
         }
 
         private void ToggleHasDisplayBeenChecked()
@@ -56,15 +55,15 @@ namespace VendingMachines
             _hasDisplayBeenChecked = !_hasDisplayBeenChecked;
         }
 
-        private string ConvertMoneyToString()
+        private string ConvertMoneyToString(double money)
         {
-            return "$" + string.Format("{0:0.00}", _insertedCoins);
+            return "$" + string.Format("{0:0.00}", money);
         }
 
         public void InsertCoin(string coin)
         {
             if(_coinBox.IsValidCoin(coin))
-                AddCoinToInsertedCoins(coin);
+                _coinBox.AddCoin(coin);
             else
                 AddCoinToReturnedCoins(coin);
         }
@@ -74,12 +73,12 @@ namespace VendingMachines
             _returnedCoins += _coinBox.GetCoinValue(coin);
         }
 
-        private void AddCoinToInsertedCoins(string coin)
+        public double CheckCoinReturn()
         {
-            _insertedCoins += _coinBox.GetCoinValue(coin);
+            return GetReturnedCoinsTotal();
         }
 
-        public double GetReturnedCoins()
+        private double GetReturnedCoinsTotal()
         {
             return _returnedCoins;
         }

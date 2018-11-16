@@ -15,6 +15,7 @@ namespace VendingMachineTest
         private const string Nickel = "Nickel";
         private const string Dime = "Dime";
         private const string Quarter = "Quarter";
+        private const double _precision = 0.001;
 
         [SetUp]
         public void TestSetup()
@@ -68,6 +69,21 @@ namespace VendingMachineTest
         public void QuarterIsWorth25Cents()
         {
             Assert.AreEqual(0.25, _coinBox.GetCoinValue(Quarter));
+        }
+
+        [Test]
+        public void AddingANickleMakesCoinBoxInsertedCoinsEqual5Cents()
+        {
+            _coinBox.AddCoin(Nickel);
+            Assert.AreEqual(0.05, _coinBox.InsertedCoins());
+        }
+
+        [Test]
+        public void AddingANickleAndDimeMackesCoinBoxInsertedCoinsEqual15Cents()
+        {
+            _coinBox.AddCoin(Nickel);
+            _coinBox.AddCoin(Dime);
+            Assert.AreEqual(0.15, _coinBox.InsertedCoins(), _precision);
         }
     }
 }
